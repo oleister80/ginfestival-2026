@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12372f">
+    <meta name="description" content="Mobil festivalguide for Fredrikstad Ginfestival 2026.">
+    <title>Festivalguide | Fredrikstad Ginfestival 2026</title>
+    <link rel="preconnect" href="https://bilder.vinmonopolet.no">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#festival-guide">Hopp til festivalguiden</a>
+
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Fredrikstad Bryggeri · 28.–29. august</p>
+        <h1>Fredrikstad<br><span>Ginfestival 2026</span></h1>
+        <p class="hero__intro">Finn dine favoritter fra årets utstillere. Trykk på hjertet for å lagre et produkt, eller på glasset når du har smakt og vil gi terningkast.</p>
+        <a class="hero__link" href="#festival-guide">Utforsk festivalguiden <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <main id="festival-guide">
+      <section class="controls" aria-label="Søk og filtrering">
+        <label class="search">
+          <span class="sr-only">Søk etter utstiller eller produkt</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="search-input" type="search" placeholder="Søk etter utstiller eller produkt" autocomplete="off">
+        </label>
+        <div id="category-filters" class="filters" aria-label="Filtrer produkter">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+          <button class="filter" type="button" data-filter="gin" aria-pressed="false">Gin</button>
+          <button class="filter" type="button" data-filter="mixer" aria-pressed="false">Tonic / mixer</button>
+          <button class="filter" type="button" data-filter="ready-to-drink" aria-pressed="false">Ready-to-drink</button>
+          <button class="filter" type="button" data-filter="cocktail" aria-pressed="false">Cocktail</button>
+          <button class="filter filter--favorites" type="button" data-filter="favorites" aria-pressed="false">
+            <span aria-hidden="true">♥</span> Favoritter <span id="favorite-count" class="filter__count">0</span>
+          </button>
+        </div>
+        <p id="result-summary" class="result-summary" aria-live="polite"></p>
+      </section>
+
+      <div id="app" class="exhibitors" aria-live="polite" aria-busy="true">
+        <div class="status"><span class="loader" aria-hidden="true"></span><p>Laster festivalguiden …</p></div>
+      </div>
+
+      <section class="send-list" aria-labelledby="send-list-title">
+        <div class="send-list__intro">
+          <p class="eyebrow">Ta vare på oppdagelsene</p>
+          <h2 id="send-list-title">Send meg listen min</h2>
+          <p>Få en ferdig oversikt over favorittene eller alt du har smakt. E-postadressen lagres ikke.</p>
+        </div>
+        <form id="send-list-form" class="send-list__form">
+          <label class="email-field" for="list-email">
+            <span>E-postadresse</span>
+            <input id="list-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="navn@eksempel.no" required>
+          </label>
+          <label class="share-consent">
+            <input id="share-with-brewery" type="checkbox">
+            <span><strong>Del med Fredrikstad Bryggeri</strong> og vær med i trekningen av 2 billetter til neste års festival.</span>
+          </label>
+          <div class="send-list__actions">
+            <button type="submit" data-list-type="favorites">Send mine favoritter</button>
+            <button type="submit" data-list-type="tasted">Send alt jeg har smakt <span>inkl. favoritter</span></button>
+          </div>
+          <p id="send-list-message" class="send-list__message" aria-live="polite"></p>
+          <p class="send-list__note">Knappen åpner en ferdig e-post i e-postprogrammet ditt. Du må selv trykke «Send».</p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Fredrikstad Ginfestival 2026</p>
+      <a href="https://www.fredrikstadginfestival.no/" target="_blank" rel="noopener noreferrer">Festivalens nettside <span aria-hidden="true">↗</span></a>
+    </footer>
+
+    <button id="to-top" class="to-top" type="button" aria-label="Tilbake til toppen">↑</button>
+  </body>
+</html>
