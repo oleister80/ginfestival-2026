@@ -37,7 +37,7 @@
     },
     {
       "id": "nordlof-hildringen-gard",
-      "name": "Nordlöf Hildringen Gård",
+      "name": "Hildringen",
       "websiteUrl": "https://hildringen.no/",
       "type": "gin",
       "products": [
@@ -85,7 +85,7 @@
     },
     {
       "id": "meir-distillery-as",
-      "name": "MEIR Distillery AS",
+      "name": "MEIR Distillery",
       "websiteUrl": "https://rebelgroup.no/produsent/meir/",
       "type": "gin",
       "products": [
@@ -108,12 +108,22 @@
           "productNumber": "19506101",
           "productUrl": "https://www.vinmonopolet.no/p/19506101",
           "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19506101-1.jpg"
+        },
+        {
+          "id": "meir-distillery-as-vinmonopolet-19406601",
+          "favoriteId": "vinmonopolet-19406601",
+          "name": "MEIR Voyage Juicy Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19406601",
+          "productUrl": "https://www.vinmonopolet.no/p/19406601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19406601-1.jpg"
         }
       ]
     },
     {
       "id": "oslo-handverksdestilleri-as",
-      "name": "Oslo Håndverksdestilleri AS",
+      "name": "Oslo Håndverksdestilleri",
       "websiteUrl": "https://www.oslohd.no/",
       "type": "gin",
       "products": [
@@ -191,7 +201,7 @@
     },
     {
       "id": "brennevinsgrova-as",
-      "name": "Brennevinsgrova AS",
+      "name": "Brennevinsgrova",
       "websiteUrl": "https://www.brennevinsgrova.no/",
       "type": "gin",
       "products": [
@@ -477,7 +487,7 @@
     },
     {
       "id": "bricks-beverages-as",
-      "name": "Bricks Beverages AS",
+      "name": "Bricks Beverages",
       "websiteUrl": "https://bricks.no/",
       "type": "gin-and-cocktail",
       "products": [
@@ -533,7 +543,7 @@
     },
     {
       "id": "toast-group-as-crafted-brands-as",
-      "name": "Toast Group AS / Crafted Brands AS",
+      "name": "Toast Group / Crafted Brands",
       "websiteUrl": "https://toastgroup.no/",
       "type": "gin",
       "products": [
@@ -959,7 +969,7 @@
     },
     {
       "id": "bottles-as",
-      "name": "Bottles AS",
+      "name": "Bottles",
       "websiteUrl": "https://www.bottles.no/",
       "type": "gin",
       "products": [
@@ -1147,7 +1157,7 @@
     },
     {
       "id": "hiernagla-brenneri-as",
-      "name": "Hiernagla Brenneri AS",
+      "name": "Hiernagla Brenneri",
       "websiteUrl": "https://hiernagla.no/",
       "type": "gin",
       "products": [
@@ -1233,7 +1243,7 @@
     },
     {
       "id": "silver-distillery-as",
-      "name": "Silver Distillery AS",
+      "name": "Silver Distillery",
       "websiteUrl": "https://silverdistillery.no/en/home/",
       "type": "gin",
       "products": [
@@ -1281,7 +1291,7 @@
     },
     {
       "id": "n-isom-as",
-      "name": "Nøisom AS",
+      "name": "Nøisom",
       "websiteUrl": "https://noisom.no/produkter/",
       "type": "mixer-and-ready-to-drink",
       "products": [
@@ -1369,7 +1379,7 @@
     },
     {
       "id": "smogen-destilleri-ab",
-      "name": "Smögen Destilleri AB",
+      "name": "Smögen Destilleri",
       "websiteUrl": "https://www.smughabranneri.se/",
       "type": "gin",
       "products": [
@@ -1407,7 +1417,7 @@
     },
     {
       "id": "bonum-as",
-      "name": "Bonum AS",
+      "name": "Bonum",
       "websiteUrl": "https://www.bonumwine.no/",
       "type": "gin",
       "products": [
