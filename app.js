@@ -62,10 +62,6 @@ function normalize(value) {
   return String(value || "").toLocaleLowerCase("nb-NO");
 }
 
-function categoryLabel(category) {
-  return ({ gin: "Gin", mixer: "Tonic / mixer", "ready-to-drink": "Ready-to-drink", cocktail: "Cocktail", content: "Innhold" })[category] || category;
-}
-
 function bottlePlaceholder() {
   return `<svg class="product__placeholder" aria-hidden="true" viewBox="0 0 32 52"><path fill="currentColor" d="M12 1h8v11l4 6v29a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4V18l4-6V1Zm2 3v9l-3 6v28c0 .6.4 1 1 1h8c.6 0 1-.4 1-1V19l-4-6V4h-3Z"/></svg>`;
 }
@@ -101,9 +97,9 @@ function productCard(product) {
   const isTasted = Boolean(tasting?.tasted);
   const rating = Number(tasting?.rating) || 0;
   const name = escapeHtml(product.name || "Uten navn");
-  const nameElement = product.productUrl
-    ? `<a class="product__name" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${name} <span class="sr-only">(åpnes i ny fane)</span></a>`
-    : `<span class="product__name">${name}</span>`;
+  const productLink = product.productUrl
+    ? `<a class="product__link" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${product.retailer ? `Se produktet hos ${escapeHtml(product.retailer)}` : "Se produktet"} <span aria-hidden="true">↗</span></a>`
+    : "";
   const image = product.imageUrl
     ? `<img class="product__image" src="${escapeAttribute(product.imageUrl)}" alt="" loading="lazy" decoding="async" onerror="this.hidden=true">`
     : bottlePlaceholder();
@@ -120,11 +116,8 @@ function productCard(product) {
     <article class="product">
       <div class="product__image-wrap">${image}</div>
       <div class="product__content">
-        ${nameElement}
-        <p class="product__meta">
-          <span>${escapeHtml(categoryLabel(product.category))}</span>
-          ${product.retailer ? `<span>${escapeHtml(product.retailer)}</span>` : ""}
-        </p>
+        <span class="product__name">${name}</span>
+        ${productLink}
       </div>
       <div class="product__actions">
         <button class="tasted${isTasted ? " is-tasted" : ""}" type="button" data-tasted-id="${escapeAttribute(id)}" aria-pressed="${isTasted}" aria-label="${isTasted ? "Marker som ikke smakt" : "Marker som smakt"}">${glassIcon()}</button>
@@ -144,14 +137,14 @@ function exhibitorCard(exhibitor, products) {
     : "";
 
   return `
-    <section class="exhibitor${isOpen ? " is-open" : ""}">
+    <section id="exhibitor-${escapeAttribute(exhibitor.id)}" class="exhibitor${isOpen ? " is-open" : ""}">
       <header class="exhibitor__header">
         <div class="exhibitor__info">
           <span class="exhibitor__kicker">${products.length} ${itemWord}</span>
           <button class="exhibitor__title" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${escapeHtml(exhibitor.name)}</button>
           ${website}
         </div>
-        <button class="exhibitor__toggle" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${isOpen ? "Lukk" : "Vis produkter"}</button>
+        <button class="exhibitor__toggle" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${isOpen ? "Lukk" : (isContent ? "Mer info" : "Vis produkter")}</button>
       </header>
       <div id="${panelId}" class="products"${isOpen ? "" : " hidden"}>${isOpen ? products.map(productCard).join("") : ""}</div>
     </section>`;
@@ -163,7 +156,9 @@ function visibleExhibitors() {
     const products = (exhibitor.products || []).filter((product) => {
       const queryMatch = !state.query || exhibitorMatch || normalize(product.name).includes(state.query);
       const filterMatch = state.filter === "all"
-        || (state.filter === "favorites" ? state.favorites.has(favoriteId(product)) : product.category === state.filter);
+        || (state.filter === "favorites" && state.favorites.has(favoriteId(product)))
+        || (state.filter === "gin" && ["gin", "cocktail"].includes(product.category))
+        || (state.filter === "mixer-rtd" && ["mixer", "ready-to-drink"].includes(product.category));
       return queryMatch && filterMatch;
     });
     return { exhibitor, products };
@@ -191,6 +186,12 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value);
+}
+
+function scrollToElement(element) {
+  if (!element) return;
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  requestAnimationFrame(() => element.scrollIntoView({ behavior, block: "start" }));
 }
 
 function allProducts() {
@@ -239,20 +240,24 @@ filters.addEventListener("click", (event) => {
   const button = event.target.closest("[data-filter]");
   if (!button) return;
   state.filter = button.dataset.filter;
+  state.openExhibitorId = null;
   filters.querySelectorAll("[data-filter]").forEach((item) => {
     const active = item === button;
     item.classList.toggle("is-active", active);
     item.setAttribute("aria-pressed", String(active));
   });
   render();
+  scrollToElement(document.querySelector(".controls"));
 });
 
 app.addEventListener("click", (event) => {
   const exhibitorButton = event.target.closest("[data-exhibitor-id]");
   if (exhibitorButton) {
     const id = exhibitorButton.dataset.exhibitorId;
-    state.openExhibitorId = state.openExhibitorId === id ? null : id;
+    const willOpen = state.openExhibitorId !== id;
+    state.openExhibitorId = willOpen ? id : null;
     render();
+    if (willOpen) scrollToElement(document.querySelector(`#exhibitor-${id}`));
     return;
   }
 

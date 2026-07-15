@@ -35,9 +35,7 @@
         <div id="category-filters" class="filters" aria-label="Filtrer produkter">
           <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
           <button class="filter" type="button" data-filter="gin" aria-pressed="false">Gin</button>
-          <button class="filter" type="button" data-filter="mixer" aria-pressed="false">Tonic / mixer</button>
-          <button class="filter" type="button" data-filter="ready-to-drink" aria-pressed="false">Ready-to-drink</button>
-          <button class="filter" type="button" data-filter="cocktail" aria-pressed="false">Cocktail</button>
+          <button class="filter" type="button" data-filter="mixer-rtd" aria-pressed="false">Tonic / mixer / annet</button>
           <button class="filter filter--favorites" type="button" data-filter="favorites" aria-pressed="false">
             <span aria-hidden="true">♥</span> Favoritter <span id="favorite-count" class="filter__count">0</span>
           </button>
@@ -55,13 +53,6 @@
           <h2 id="practical-title">Praktisk info</h2>
           <p>Her finner du kart, åpningstider og nyttig informasjon for festivalhelgen.</p>
         </header>
-
-        <figure class="festival-map">
-          <a href="images/festivalkart.jpg" target="_blank" rel="noopener noreferrer" aria-label="Åpne festivalkartet i full størrelse">
-            <img src="images/festivalkart.jpg" alt="Kart over festivalområdet på Fredrikstad Bryggeri" loading="lazy" decoding="async">
-          </a>
-          <figcaption>Kart over festivalområdet <span>Trykk på kartet for full størrelse ↗</span></figcaption>
-        </figure>
 
         <div class="practical__grid">
           <article class="info-card info-card--hours">
@@ -81,6 +72,10 @@
               <li>Utstillerne finner du i <strong>Gjærhuset</strong>, <strong>Ishallen</strong> og <strong>Gildesalen</strong>.</li>
               <li>Følg egen skilting til masterclass-rommet – eller spør oss 😊</li>
             </ul>
+            <a class="map-link" href="images/festivalkart.jpg" target="_blank" rel="noopener noreferrer">
+              <img src="images/festivalkart.jpg" alt="Miniatyr av kart over festivalområdet" loading="lazy" decoding="async">
+              <span>Se festivalkart her <span aria-hidden="true">↗</span></span>
+            </a>
           </article>
 
           <article class="info-card">
