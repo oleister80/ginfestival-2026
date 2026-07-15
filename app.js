@@ -195,11 +195,6 @@ function scrollToElement(element) {
   requestAnimationFrame(() => element.scrollIntoView({ behavior, block: "start" }));
 }
 
-function scrollToPageTop() {
-  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior }));
-}
-
 function allProducts() {
   return state.exhibitors.flatMap((exhibitor) => (exhibitor.products || []).map((product) => ({ ...product, exhibitorName: exhibitor.name })));
 }
@@ -253,7 +248,7 @@ filters.addEventListener("click", (event) => {
     item.setAttribute("aria-pressed", String(active));
   });
   render();
-  scrollToPageTop();
+  scrollToElement(document.querySelector("#festival-guide"));
 });
 
 app.addEventListener("click", (event) => {
