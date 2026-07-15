@@ -18,7 +18,10 @@
         <p class="eyebrow">Fredrikstad Bryggeri · 28.–29. august</p>
         <h1>Fredrikstad<br><span>Ginfestival 2026</span></h1>
         <p class="hero__intro">Finn dine favoritter fra årets utstillere. Trykk på hjertet for å lagre et produkt, eller på glasset når du har smakt og vil gi terningkast.</p>
-        <a class="hero__link" href="#festival-guide">Utforsk festivalguiden <span aria-hidden="true">↓</span></a>
+        <div class="hero__actions">
+          <a class="hero__link" href="#festival-guide">Utforsk festivalguiden <span aria-hidden="true">↓</span></a>
+          <a class="hero__link hero__link--secondary" href="#practical-title">Praktisk info <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </header>
 
@@ -45,6 +48,69 @@
       <div id="app" class="exhibitors" aria-live="polite" aria-busy="true">
         <div class="status"><span class="loader" aria-hidden="true"></span><p>Laster festivalguiden …</p></div>
       </div>
+
+      <section class="practical" aria-labelledby="practical-title">
+        <header class="practical__header">
+          <p class="eyebrow">Greit å vite</p>
+          <h2 id="practical-title">Praktisk info</h2>
+          <p>Her finner du kart, åpningstider og nyttig informasjon for festivalhelgen.</p>
+        </header>
+
+        <figure class="festival-map">
+          <a href="images/festivalkart.jpg" target="_blank" rel="noopener noreferrer" aria-label="Åpne festivalkartet i full størrelse">
+            <img src="images/festivalkart.jpg" alt="Kart over festivalområdet på Fredrikstad Bryggeri" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Kart over festivalområdet <span>Trykk på kartet for full størrelse ↗</span></figcaption>
+        </figure>
+
+        <div class="practical__grid">
+          <article class="info-card info-card--hours">
+            <p class="info-card__label">Åpningstider</p>
+            <h3>Festivalhelgen</h3>
+            <dl class="hours">
+              <div><dt>Fredag</dt><dd>17:00–21:00</dd></div>
+              <div><dt>Lørdag</dt><dd>14:00–20:30</dd></div>
+            </dl>
+          </article>
+
+          <article class="info-card">
+            <p class="info-card__label">Finn frem</p>
+            <h3>Rom og toaletter</h3>
+            <ul>
+              <li>Toalettene er ved hovedinngangen, ved billettkontrollen.</li>
+              <li>Utstillerne finner du i <strong>Gjærhuset</strong>, <strong>Ishallen</strong> og <strong>Gildesalen</strong>.</li>
+              <li>Følg egen skilting til masterclass-rommet – eller spør oss 😊</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <p class="info-card__label">Bakgården</p>
+            <h3>Mat og drikke</h3>
+            <p>I bakgården er det bar med salg av ulike drikkevarer, i tillegg til salg av grillmat.</p>
+          </article>
+
+          <aside class="info-card info-card--notice">
+            <p class="info-card__label">Viktig</p>
+            <h3>Røyking</h3>
+            <p>Røyking er kun tillatt på anviste plasser i bakgården. Det er <strong>ikke tillatt å røyke ved hovedinngangen</strong>.</p>
+          </aside>
+
+          <article class="info-card">
+            <p class="info-card__label">Masterclass</p>
+            <h3>Billetter</h3>
+            <p>Billetter til masterclass legges ut separat.</p>
+            <span class="coming-soon">Lenke kommer</span>
+          </article>
+
+          <article class="info-card">
+            <p class="info-card__label">Transport</p>
+            <h3>Bestille taxi?</h3>
+            <p>Ring <a href="tel:02600">02600</a>, eller bestill taxi på nett.</p>
+            <a class="info-card__link" href="https://02600.no/bestille-taxi/" target="_blank" rel="noopener noreferrer">Bestill taxi online ↗</a>
+            <address>Fredrikstad Ginfestival<br><strong>Losjeveien 2, Fredrikstad</strong></address>
+          </article>
+        </div>
+      </section>
 
       <section class="send-list" aria-labelledby="send-list-title">
         <div class="send-list__intro">
