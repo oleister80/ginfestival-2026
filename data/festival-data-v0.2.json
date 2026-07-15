@@ -1,0 +1,1557 @@
+{
+  "festival": {
+    "name": "Fredrikstad Ginfestival 2026",
+    "dataVersion": "0.2",
+    "source": "Manually curated exhibitor/product list from Excel/TSV",
+    "notes": "Vinmonopolet imageUrl is generated from productNumber using https://bilder.vinmonopolet.no/cache/600x600-0/{productNumber}-1.jpg. Product id is unique per exhibitor/product row. favoriteId is stable across duplicated Vinmonopolet/Systembolaget products."
+  },
+  "stats": {
+    "exhibitorCount": 17,
+    "productCount": 140,
+    "productCountByCategory": {
+      "cocktail": 1,
+      "content": 1,
+      "gin": 121,
+      "mixer": 14,
+      "ready-to-drink": 3
+    }
+  },
+  "exhibitors": [
+    {
+      "id": "alt-om-gin",
+      "name": "Alt om Gin",
+      "websiteUrl": "https://altomgin.no/",
+      "type": "content",
+      "products": [
+        {
+          "id": "alt-om-gin-alt-du-trenger-a-vite-om-gin-og-tilbeh-r-nordens-st-rste-nettside-om-gin",
+          "favoriteId": "alt-du-trenger-a-vite-om-gin-og-tilbeh-r-nordens-st-rste-nettside-om-gin",
+          "name": "Alt du trenger å vite om gin og tilbehør | Nordens største nettside om gin",
+          "category": "content",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://altomgin.no/",
+          "imageUrl": "./images/altomgin.jpg"
+        }
+      ]
+    },
+    {
+      "id": "nordlof-hildringen-gard",
+      "name": "Nordlöf Hildringen Gård",
+      "websiteUrl": "https://hildringen.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "nordlof-hildringen-gard-vinmonopolet-20390902",
+          "favoriteId": "vinmonopolet-20390902",
+          "name": "Hildringen Aurora Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20390902",
+          "productUrl": "https://www.vinmonopolet.no/p/20390902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20390902-1.jpg"
+        },
+        {
+          "id": "nordlof-hildringen-gard-vinmonopolet-19841102",
+          "favoriteId": "vinmonopolet-19841102",
+          "name": "Hildringen Bakkan Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19841102",
+          "productUrl": "https://www.vinmonopolet.no/p/19841102",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19841102-1.jpg"
+        },
+        {
+          "id": "nordlof-hildringen-gard-vinmonopolet-19839002",
+          "favoriteId": "vinmonopolet-19839002",
+          "name": "Hildringen Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19839002",
+          "productUrl": "https://www.vinmonopolet.no/p/19839002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19839002-1.jpg"
+        },
+        {
+          "id": "nordlof-hildringen-gard-vinmonopolet-20519702",
+          "favoriteId": "vinmonopolet-20519702",
+          "name": "Hildringen Fika Old Tom Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20519702",
+          "productUrl": "https://www.vinmonopolet.no/p/20519702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20519702-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "meir-distillery-as",
+      "name": "MEIR Distillery AS",
+      "websiteUrl": "https://rebelgroup.no/produsent/meir/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "meir-distillery-as-vinmonopolet-17323101",
+          "favoriteId": "vinmonopolet-17323101",
+          "name": "Truls Svendsen GIN",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17323101",
+          "productUrl": "https://www.vinmonopolet.no/p/17323101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17323101-1.jpg"
+        },
+        {
+          "id": "meir-distillery-as-vinmonopolet-19506101",
+          "favoriteId": "vinmonopolet-19506101",
+          "name": "MEIR Botanical Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19506101",
+          "productUrl": "https://www.vinmonopolet.no/p/19506101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19506101-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "oslo-handverksdestilleri-as",
+      "name": "Oslo Håndverksdestilleri AS",
+      "websiteUrl": "https://www.oslohd.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-17048001",
+          "favoriteId": "vinmonopolet-17048001",
+          "name": "OHD Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17048001",
+          "productUrl": "https://www.vinmonopolet.no/p/17048001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17048001-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-10182801",
+          "favoriteId": "vinmonopolet-10182801",
+          "name": "OHD Fjæra rosé Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "10182801",
+          "productUrl": "https://www.vinmonopolet.no/p/10182801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/10182801-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-15563001",
+          "favoriteId": "vinmonopolet-15563001",
+          "name": "OHD Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15563001",
+          "productUrl": "https://www.vinmonopolet.no/p/15563001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15563001-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-19479901",
+          "favoriteId": "vinmonopolet-19479901",
+          "name": "OHD Tropical Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19479901",
+          "productUrl": "https://www.vinmonopolet.no/p/19479901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19479901-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-5193801",
+          "favoriteId": "vinmonopolet-5193801",
+          "name": "OHD Vidda Tørr Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "5193801",
+          "productUrl": "https://www.vinmonopolet.no/p/5193801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/5193801-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-19575901",
+          "favoriteId": "vinmonopolet-19575901",
+          "name": "OHD Vålerenga Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19575901",
+          "productUrl": "https://www.vinmonopolet.no/p/19575901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19575901-1.jpg"
+        },
+        {
+          "id": "oslo-handverksdestilleri-as-vinmonopolet-13752701",
+          "favoriteId": "vinmonopolet-13752701",
+          "name": "Vidda Gin Negroni Cask",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13752701",
+          "productUrl": "https://www.vinmonopolet.no/p/13752701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13752701-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "brennevinsgrova-as",
+      "name": "Brennevinsgrova AS",
+      "websiteUrl": "https://www.brennevinsgrova.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-16366702",
+          "favoriteId": "vinmonopolet-16366702",
+          "name": "Devold Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16366702",
+          "productUrl": "https://www.vinmonopolet.no/p/16366702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16366702-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-14235002",
+          "favoriteId": "vinmonopolet-14235002",
+          "name": "Flower Garden Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14235002",
+          "productUrl": "https://www.vinmonopolet.no/p/14235002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14235002-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-15410304",
+          "favoriteId": "vinmonopolet-15410304",
+          "name": "Flower Garden Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15410304",
+          "productUrl": "https://www.vinmonopolet.no/p/15410304",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15410304-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-16983504",
+          "favoriteId": "vinmonopolet-16983504",
+          "name": "Green Apple Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16983504",
+          "productUrl": "https://www.vinmonopolet.no/p/16983504",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16983504-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-19656302",
+          "favoriteId": "vinmonopolet-19656302",
+          "name": "Green Apple Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19656302",
+          "productUrl": "https://www.vinmonopolet.no/p/19656302",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19656302-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-11931802",
+          "favoriteId": "vinmonopolet-11931802",
+          "name": "London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11931802",
+          "productUrl": "https://www.vinmonopolet.no/p/11931802",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11931802-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-12431202",
+          "favoriteId": "vinmonopolet-12431202",
+          "name": "Navy Strength Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12431202",
+          "productUrl": "https://www.vinmonopolet.no/p/12431202",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12431202-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-13756002",
+          "favoriteId": "vinmonopolet-13756002",
+          "name": "Premium Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13756002",
+          "productUrl": "https://www.vinmonopolet.no/p/13756002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13756002-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-16818704",
+          "favoriteId": "vinmonopolet-16818704",
+          "name": "Premium Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16818704",
+          "productUrl": "https://www.vinmonopolet.no/p/16818704",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16818704-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-15367802",
+          "favoriteId": "vinmonopolet-15367802",
+          "name": "Rosenlund Hamn Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15367802",
+          "productUrl": "https://www.vinmonopolet.no/p/15367802",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15367802-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-11931902",
+          "favoriteId": "vinmonopolet-11931902",
+          "name": "Strawberry Pink",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11931902",
+          "productUrl": "https://www.vinmonopolet.no/p/11931902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11931902-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-19656204",
+          "favoriteId": "vinmonopolet-19656204",
+          "name": "Strawberry Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19656204",
+          "productUrl": "https://www.vinmonopolet.no/p/19656204",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19656204-1.jpg"
+        },
+        {
+          "id": "brennevinsgrova-as-vinmonopolet-20498102",
+          "favoriteId": "vinmonopolet-20498102",
+          "name": "Upendo Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20498102",
+          "productUrl": "https://www.vinmonopolet.no/p/20498102",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20498102-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "anora",
+      "name": "Anora",
+      "websiteUrl": "https://www.anoranorway.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "anora-vinmonopolet-14377502",
+          "favoriteId": "vinmonopolet-14377502",
+          "name": "Engine Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14377502",
+          "productUrl": "https://www.vinmonopolet.no/p/14377502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14377502-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-15722401",
+          "favoriteId": "vinmonopolet-15722401",
+          "name": "Kalinka Dry Distilled Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15722401",
+          "productUrl": "https://www.vinmonopolet.no/p/15722401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15722401-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-20465901",
+          "favoriteId": "vinmonopolet-20465901",
+          "name": "Skagerrak Nordic Distilled Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20465901",
+          "productUrl": "https://www.vinmonopolet.no/p/20465901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20465901-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-11710901",
+          "favoriteId": "vinmonopolet-11710901",
+          "name": "Gibson's Premium Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11710901",
+          "productUrl": "https://www.vinmonopolet.no/p/11710901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11710901-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-1568001",
+          "favoriteId": "vinmonopolet-1568001",
+          "name": "Gibson's London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "1568001",
+          "productUrl": "https://www.vinmonopolet.no/p/1568001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/1568001-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-14474001",
+          "favoriteId": "vinmonopolet-14474001",
+          "name": "Gibson's Blood Orange Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14474001",
+          "productUrl": "https://www.vinmonopolet.no/p/14474001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14474001-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-19357001",
+          "favoriteId": "vinmonopolet-19357001",
+          "name": "Gibson Italian Lemon Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19357001",
+          "productUrl": "https://www.vinmonopolet.no/p/19357001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19357001-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-3271901",
+          "favoriteId": "vinmonopolet-3271901",
+          "name": "Citadelle Gin de France",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "3271901",
+          "productUrl": "https://www.vinmonopolet.no/p/3271901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/3271901-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-19349701",
+          "favoriteId": "vinmonopolet-19349701",
+          "name": "Citadelle Gin Rouge",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19349701",
+          "productUrl": "https://www.vinmonopolet.no/p/19349701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19349701-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-15760901",
+          "favoriteId": "vinmonopolet-15760901",
+          "name": "Amarula African Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15760901",
+          "productUrl": "https://www.vinmonopolet.no/p/15760901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15760901-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-1299701",
+          "favoriteId": "vinmonopolet-1299701",
+          "name": "Arctic Distilled Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "1299701",
+          "productUrl": "https://www.vinmonopolet.no/p/1299701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/1299701-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-13225001",
+          "favoriteId": "vinmonopolet-13225001",
+          "name": "McQueen Scottish Gin Citron",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13225001",
+          "productUrl": "https://www.vinmonopolet.no/p/13225001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13225001-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-13221302",
+          "favoriteId": "vinmonopolet-13221302",
+          "name": "O.P. Anderson Distillery Blood Orange Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13221302",
+          "productUrl": "https://www.vinmonopolet.no/p/13221302",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13221302-1.jpg"
+        },
+        {
+          "id": "anora-vinmonopolet-12409001",
+          "favoriteId": "vinmonopolet-12409001",
+          "name": "Tobermory Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12409001",
+          "productUrl": "https://www.vinmonopolet.no/p/12409001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12409001-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bricks-beverages-as",
+      "name": "Bricks Beverages AS",
+      "websiteUrl": "https://bricks.no/",
+      "type": "gin-and-cocktail",
+      "products": [
+        {
+          "id": "bricks-beverages-as-vinmonopolet-17103601",
+          "favoriteId": "vinmonopolet-17103601",
+          "name": "The Yacht Club Negroni",
+          "category": "cocktail",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17103601",
+          "productUrl": "https://www.vinmonopolet.no/p/17103601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17103601-1.jpg"
+        },
+        {
+          "id": "bricks-beverages-as-vinmonopolet-19344101",
+          "favoriteId": "vinmonopolet-19344101",
+          "name": "The Yacht Club Riviera Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19344101",
+          "productUrl": "https://www.vinmonopolet.no/p/19344101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19344101-1.jpg"
+        },
+        {
+          "id": "bricks-beverages-as-vinmonopolet-13153001",
+          "favoriteId": "vinmonopolet-13153001",
+          "name": "East London Royal Botanic Garden Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13153001",
+          "productUrl": "https://www.vinmonopolet.no/p/13153001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13153001-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "kringler-farm-distillery",
+      "name": "Kringler Farm Distillery",
+      "websiteUrl": "https://kringler.no/gardsdestilleriet/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "kringler-farm-distillery-vinmonopolet-17324501",
+          "favoriteId": "vinmonopolet-17324501",
+          "name": "Kringler Farm Dist. London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17324501",
+          "productUrl": "https://www.vinmonopolet.no/p/17324501",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17324501-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "toast-group-as-crafted-brands-as",
+      "name": "Toast Group AS / Crafted Brands AS",
+      "websiteUrl": "https://toastgroup.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-5703101",
+          "favoriteId": "vinmonopolet-5703101",
+          "name": "Bareksten Botanical Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "5703101",
+          "productUrl": "https://www.vinmonopolet.no/p/5703101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/5703101-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-12077601",
+          "favoriteId": "vinmonopolet-12077601",
+          "name": "Bareksten Double Distilled Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12077601",
+          "productUrl": "https://www.vinmonopolet.no/p/12077601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12077601-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-12204202",
+          "favoriteId": "vinmonopolet-12204202",
+          "name": "Bareksten Lyset Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12204202",
+          "productUrl": "https://www.vinmonopolet.no/p/12204202",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12204202-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-11395502",
+          "favoriteId": "vinmonopolet-11395502",
+          "name": "Bareksten Mørket/Darkness Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11395502",
+          "productUrl": "https://www.vinmonopolet.no/p/11395502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11395502-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-10196502",
+          "favoriteId": "vinmonopolet-10196502",
+          "name": "Bareksten Navy Strength Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "10196502",
+          "productUrl": "https://www.vinmonopolet.no/p/10196502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/10196502-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-13096401",
+          "favoriteId": "vinmonopolet-13096401",
+          "name": "Bareksten Old Tom Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13096401",
+          "productUrl": "https://www.vinmonopolet.no/p/13096401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13096401-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-10329101",
+          "favoriteId": "vinmonopolet-10329101",
+          "name": "Berkeley Square Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "10329101",
+          "productUrl": "https://www.vinmonopolet.no/p/10329101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/10329101-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-14235002",
+          "favoriteId": "vinmonopolet-14235002",
+          "name": "Brennevinsgrova Flower Garden Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14235002",
+          "productUrl": "https://www.vinmonopolet.no/p/14235002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14235002-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-16983504",
+          "favoriteId": "vinmonopolet-16983504",
+          "name": "Brennevinsgrova Green Apple Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16983504",
+          "productUrl": "https://www.vinmonopolet.no/p/16983504",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16983504-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-11931802",
+          "favoriteId": "vinmonopolet-11931802",
+          "name": "Brennevinsgrova London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11931802",
+          "productUrl": "https://www.vinmonopolet.no/p/11931802",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11931802-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-12431202",
+          "favoriteId": "vinmonopolet-12431202",
+          "name": "Brennevinsgrova Navy Strength Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12431202",
+          "productUrl": "https://www.vinmonopolet.no/p/12431202",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12431202-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-13756002",
+          "favoriteId": "vinmonopolet-13756002",
+          "name": "Brennevinsgrova Premium Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13756002",
+          "productUrl": "https://www.vinmonopolet.no/p/13756002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13756002-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-11931902",
+          "favoriteId": "vinmonopolet-11931902",
+          "name": "Brennevinsgrova Strawberry Pink",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11931902",
+          "productUrl": "https://www.vinmonopolet.no/p/11931902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11931902-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-18957201",
+          "favoriteId": "vinmonopolet-18957201",
+          "name": "Brockmans Gin Agave Cut",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18957201",
+          "productUrl": "https://www.vinmonopolet.no/p/18957201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18957201-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-15991401",
+          "favoriteId": "vinmonopolet-15991401",
+          "name": "Brockmans Gin Orange Kiss",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15991401",
+          "productUrl": "https://www.vinmonopolet.no/p/15991401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15991401-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-2205601",
+          "favoriteId": "vinmonopolet-2205601",
+          "name": "Brockmans Premium Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "2205601",
+          "productUrl": "https://www.vinmonopolet.no/p/2205601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/2205601-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-17388201",
+          "favoriteId": "vinmonopolet-17388201",
+          "name": "Elsker Dry Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17388201",
+          "productUrl": "https://www.vinmonopolet.no/p/17388201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17388201-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-16827201",
+          "favoriteId": "vinmonopolet-16827201",
+          "name": "Elsker London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16827201",
+          "productUrl": "https://www.vinmonopolet.no/p/16827201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16827201-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-16827601",
+          "favoriteId": "vinmonopolet-16827601",
+          "name": "Elsker Nordic Berries Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16827601",
+          "productUrl": "https://www.vinmonopolet.no/p/16827601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16827601-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-13683901",
+          "favoriteId": "vinmonopolet-13683901",
+          "name": "Greenall’s Blood Orange Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13683901",
+          "productUrl": "https://www.vinmonopolet.no/p/13683901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13683901-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-6958101",
+          "favoriteId": "vinmonopolet-6958101",
+          "name": "Greenall’s London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "6958101",
+          "productUrl": "https://www.vinmonopolet.no/p/6958101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/6958101-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-11163801",
+          "favoriteId": "vinmonopolet-11163801",
+          "name": "Greenall's Wild Berry Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11163801",
+          "productUrl": "https://www.vinmonopolet.no/p/11163801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11163801-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-18543601",
+          "favoriteId": "vinmonopolet-18543601",
+          "name": "Himmel Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18543601",
+          "productUrl": "https://www.vinmonopolet.no/p/18543601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18543601-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-17283602",
+          "favoriteId": "vinmonopolet-17283602",
+          "name": "Kyrö Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17283602",
+          "productUrl": "https://www.vinmonopolet.no/p/17283602",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17283602-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-13447901",
+          "favoriteId": "vinmonopolet-13447901",
+          "name": "Luxardo Sour Cherry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13447901",
+          "productUrl": "https://www.vinmonopolet.no/p/13447901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13447901-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-2847901",
+          "favoriteId": "vinmonopolet-2847901",
+          "name": "Opihr Oriental Spiced London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "2847901",
+          "productUrl": "https://www.vinmonopolet.no/p/2847901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/2847901-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-17064401",
+          "favoriteId": "vinmonopolet-17064401",
+          "name": "Pink Royal by Bareksten Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17064401",
+          "productUrl": "https://www.vinmonopolet.no/p/17064401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17064401-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-743601",
+          "favoriteId": "vinmonopolet-743601",
+          "name": "Portobello Road London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "743601",
+          "productUrl": "https://www.vinmonopolet.no/p/743601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/743601-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-16830501",
+          "favoriteId": "vinmonopolet-16830501",
+          "name": "MAeCO Italian Premium Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16830501",
+          "productUrl": "https://www.vinmonopolet.no/p/16830501",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16830501-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-7768702",
+          "favoriteId": "vinmonopolet-7768702",
+          "name": "Stockholms Bränneri Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "7768702",
+          "productUrl": "https://www.vinmonopolet.no/p/7768702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/7768702-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-16321902",
+          "favoriteId": "vinmonopolet-16321902",
+          "name": "Stockholms Bränneri Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16321902",
+          "productUrl": "https://www.vinmonopolet.no/p/16321902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16321902-1.jpg"
+        },
+        {
+          "id": "toast-group-as-crafted-brands-as-vinmonopolet-7774201",
+          "favoriteId": "vinmonopolet-7774201",
+          "name": "Thomas Dakin Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "7774201",
+          "productUrl": "https://www.vinmonopolet.no/p/7774201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/7774201-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "fever-tree",
+      "name": "Fever Tree",
+      "websiteUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+      "type": "mixer",
+      "products": [
+        {
+          "id": "fever-tree-fever-tree-bitter-lemon",
+          "favoriteId": "fever-tree-bitter-lemon",
+          "name": "Fever Tree Bitter Lemon",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033176_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-elderflower-tonic",
+          "favoriteId": "fever-tree-elderflower-tonic",
+          "name": "Fever Tree Elderflower Tonic",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033167_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-indian-tonic",
+          "favoriteId": "fever-tree-indian-tonic",
+          "name": "Fever Tree Indian Tonic",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000027547_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-mediterranean-tonic",
+          "favoriteId": "fever-tree-mediterranean-tonic",
+          "name": "Fever Tree Mediterranean Tonic",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000034134_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-pink-grape",
+          "favoriteId": "fever-tree-pink-grape",
+          "name": "Fever Tree Pink Grape",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033212_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-premium-soda-water",
+          "favoriteId": "fever-tree-premium-soda-water",
+          "name": "Fever Tree Premium Soda Water",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033120_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-raspberry-and-rhubarb",
+          "favoriteId": "fever-tree-raspberry-and-rhubarb",
+          "name": "Fever Tree Raspberry & Rhubarb",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033126_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-spanish-clementine",
+          "favoriteId": "fever-tree-spanish-clementine",
+          "name": "Fever Tree Spanish Clementine",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000033205_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        },
+        {
+          "id": "fever-tree-fever-tree-sparkling-pink-grapefruit",
+          "favoriteId": "fever-tree-sparkling-pink-grapefruit",
+          "name": "Fever Tree Sparkling Pink Grapefruit",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
+          "imageUrl": "https://hansasolerahandel.no/media/catalog/product/0/0/000000000000032194_1_gl_hansaborg.png?width=500&height=500&canvas=500,500&quality=80&fit=bounds&format=jpeg"
+        }
+      ]
+    },
+    {
+      "id": "bottles-as",
+      "name": "Bottles AS",
+      "websiteUrl": "https://www.bottles.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "bottles-as-vinmonopolet-18969602",
+          "favoriteId": "vinmonopolet-18969602",
+          "name": "Bohuslänsk Røykt Tång Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18969602",
+          "productUrl": "https://www.vinmonopolet.no/p/18969602",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18969602-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18969502",
+          "favoriteId": "vinmonopolet-18969502",
+          "name": "Bohuslänsk Tång Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18969502",
+          "productUrl": "https://www.vinmonopolet.no/p/18969502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18969502-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20333101",
+          "favoriteId": "vinmonopolet-20333101",
+          "name": "Gintleman Black London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20333101",
+          "productUrl": "https://www.vinmonopolet.no/p/20333101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20333101-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20333401",
+          "favoriteId": "vinmonopolet-20333401",
+          "name": "Gintleman Gin Strawbery",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20333401",
+          "productUrl": "https://www.vinmonopolet.no/p/20333401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20333401-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20333301",
+          "favoriteId": "vinmonopolet-20333301",
+          "name": "Gintleman Melon Flawours",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20333301",
+          "productUrl": "https://www.vinmonopolet.no/p/20333301",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20333301-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20333201",
+          "favoriteId": "vinmonopolet-20333201",
+          "name": "Gintleman Valencia Late",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20333201",
+          "productUrl": "https://www.vinmonopolet.no/p/20333201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20333201-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-19297001",
+          "favoriteId": "vinmonopolet-19297001",
+          "name": "Hedonia London Dry Gin Umami",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19297001",
+          "productUrl": "https://www.vinmonopolet.no/p/19297001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19297001-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-16499801",
+          "favoriteId": "vinmonopolet-16499801",
+          "name": "Hedonya Zesty Berry London Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "16499801",
+          "productUrl": "https://www.vinmonopolet.no/p/16499801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16499801-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-17512001",
+          "favoriteId": "vinmonopolet-17512001",
+          "name": "James Gin Asian Parsnip",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17512001",
+          "productUrl": "https://www.vinmonopolet.no/p/17512001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17512001-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18796702",
+          "favoriteId": "vinmonopolet-18796702",
+          "name": "James Gin Navy Strenght Asian Parsnip",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18796702",
+          "productUrl": "https://www.vinmonopolet.no/p/18796702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18796702-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18797002",
+          "favoriteId": "vinmonopolet-18797002",
+          "name": "Mill Gin Fjallbacka",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18797002",
+          "productUrl": "https://www.vinmonopolet.no/p/18797002",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18797002-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18796602",
+          "favoriteId": "vinmonopolet-18796602",
+          "name": "Mill Gin Love Hope & Pride",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18796602",
+          "productUrl": "https://www.vinmonopolet.no/p/18796602",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18796602-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18796902",
+          "favoriteId": "vinmonopolet-18796902",
+          "name": "Mill Gin Pink",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18796902",
+          "productUrl": "https://www.vinmonopolet.no/p/18796902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18796902-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-15627802",
+          "favoriteId": "vinmonopolet-15627802",
+          "name": "Oath Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15627802",
+          "productUrl": "https://www.vinmonopolet.no/p/15627802",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15627802-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-18921502",
+          "favoriteId": "vinmonopolet-18921502",
+          "name": "Prince Explorer",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18921502",
+          "productUrl": "https://www.vinmonopolet.no/p/18921502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18921502-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20333001",
+          "favoriteId": "vinmonopolet-20333001",
+          "name": "Sysland Trophy Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20333001",
+          "productUrl": "https://www.vinmonopolet.no/p/20333001",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20333001-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20332901",
+          "favoriteId": "vinmonopolet-20332901",
+          "name": "Sysland Trophy Strawberry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20332901",
+          "productUrl": "https://www.vinmonopolet.no/p/20332901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20332901-1.jpg"
+        },
+        {
+          "id": "bottles-as-vinmonopolet-20707301",
+          "favoriteId": "vinmonopolet-20707301",
+          "name": "Y-gin Orginal",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20707301",
+          "productUrl": "https://www.vinmonopolet.no/p/20707301",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20707301-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "hiernagla-brenneri-as",
+      "name": "Hiernagla Brenneri AS",
+      "websiteUrl": "https://hiernagla.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "hiernagla-brenneri-as-vinmonopolet-19349502",
+          "favoriteId": "vinmonopolet-19349502",
+          "name": "Hiernagla Ametyst Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19349502",
+          "productUrl": "https://www.vinmonopolet.no/p/19349502",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19349502-1.jpg"
+        },
+        {
+          "id": "hiernagla-brenneri-as-vinmonopolet-18759601",
+          "favoriteId": "vinmonopolet-18759601",
+          "name": "Hiernagla Eld Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "18759601",
+          "productUrl": "https://www.vinmonopolet.no/p/18759601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/18759601-1.jpg"
+        },
+        {
+          "id": "hiernagla-brenneri-as-vinmonopolet-12167902",
+          "favoriteId": "vinmonopolet-12167902",
+          "name": "Hiernagla Fyri Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12167902",
+          "productUrl": "https://www.vinmonopolet.no/p/12167902",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12167902-1.jpg"
+        },
+        {
+          "id": "hiernagla-brenneri-as-vinmonopolet-13325702",
+          "favoriteId": "vinmonopolet-13325702",
+          "name": "Hiernagla Sva Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "13325702",
+          "productUrl": "https://www.vinmonopolet.no/p/13325702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13325702-1.jpg"
+        },
+        {
+          "id": "hiernagla-brenneri-as-vinmonopolet-15140602",
+          "favoriteId": "vinmonopolet-15140602",
+          "name": "White Dragon Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15140602",
+          "productUrl": "https://www.vinmonopolet.no/p/15140602",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15140602-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "koster-spirits",
+      "name": "Koster Spirits",
+      "websiteUrl": "https://kosterspirits.com/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "koster-spirits-systembolaget-blue-lobster",
+          "favoriteId": "systembolaget-blue-lobster",
+          "name": "Blue Lobster",
+          "category": "gin",
+          "retailer": "Systembolaget",
+          "productNumber": null,
+          "productUrl": "https://www.systembolaget.se/produkt/sprit/koster-gin-3235801/",
+          "imageUrl": "https://www.systembolaget.se/_next/image/?url=https%3A%2F%2Fproduct-cdn.systembolaget.se%2Fproductimages%2F38018247%2F38018247_400.webp&w=256&q=75"
+        },
+        {
+          "id": "koster-spirits-systembolaget-ekologisk-gin-flard",
+          "favoriteId": "systembolaget-ekologisk-gin-flard",
+          "name": "Ekologisk Gin Flärd",
+          "category": "gin",
+          "retailer": "Systembolaget",
+          "productNumber": null,
+          "productUrl": "https://www.systembolaget.se/produkt/sprit/koster-spirits-3151901/",
+          "imageUrl": "https://www.systembolaget.se/_next/image/?url=https%3A%2F%2Fproduct-cdn.systembolaget.se%2Fproductimages%2F44484397%2F44484397_400.webp&w=256&q=75"
+        }
+      ]
+    },
+    {
+      "id": "silver-distillery-as",
+      "name": "Silver Distillery AS",
+      "websiteUrl": "https://silverdistillery.no/en/home/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "silver-distillery-as-vinmonopolet-15172501",
+          "favoriteId": "vinmonopolet-15172501",
+          "name": "Silver Distillery Botanic Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15172501",
+          "productUrl": "https://www.vinmonopolet.no/p/15172501",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15172501-1.jpg"
+        },
+        {
+          "id": "silver-distillery-as-vinmonopolet-17100701",
+          "favoriteId": "vinmonopolet-17100701",
+          "name": "Silver Distillery Cinnamon Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17100701",
+          "productUrl": "https://www.vinmonopolet.no/p/17100701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17100701-1.jpg"
+        },
+        {
+          "id": "silver-distillery-as-vinmonopolet-15427401",
+          "favoriteId": "vinmonopolet-15427401",
+          "name": "Silver Distillery Pink Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "15427401",
+          "productUrl": "https://www.vinmonopolet.no/p/15427401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15427401-1.jpg"
+        },
+        {
+          "id": "silver-distillery-as-vinmonopolet-20753401",
+          "favoriteId": "vinmonopolet-20753401",
+          "name": "Silver Distillery Queen Mangosteen Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20753401",
+          "productUrl": "https://www.vinmonopolet.no/p/20753401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20753401-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "n-isom-as",
+      "name": "Nøisom AS",
+      "websiteUrl": "https://noisom.no/produkter/",
+      "type": "mixer-and-ready-to-drink",
+      "products": [
+        {
+          "id": "n-isom-as-tundra-tonic-water-agurk",
+          "favoriteId": "tundra-tonic-water-agurk",
+          "name": "Tundra - Tonic Water Agurk",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/11/7090034396012_A1N1_600px-300x300.jpg"
+        },
+        {
+          "id": "n-isom-as-tundra-tonic-water-bringeb-r",
+          "favoriteId": "tundra-tonic-water-bringeb-r",
+          "name": "Tundra - Tonic Water Bringebær",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/11/7090034395428_A1N1_600px-300x300.jpg"
+        },
+        {
+          "id": "n-isom-as-tundra-tonic-water-original",
+          "favoriteId": "tundra-tonic-water-original",
+          "name": "Tundra - Tonic Water Original",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/11/7090034395961_A1N1_600px-300x300.jpg"
+        },
+        {
+          "id": "n-isom-as-tundra-tonic-water-pink-grapefrukt",
+          "favoriteId": "tundra-tonic-water-pink-grapefrukt",
+          "name": "Tundra - Tonic Water Pink Grapefrukt",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/11/7090034394674_A1N1_600px-300x300.jpg"
+        },
+        {
+          "id": "n-isom-as-tundra-tonic-water-rabarbra-and-bringeb-r",
+          "favoriteId": "tundra-tonic-water-rabarbra-and-bringeb-r",
+          "name": "Tundra - Tonic Water Rabarbra & Bringebær",
+          "category": "mixer",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/11/7090034395909_A1N1_600px-300x300.jpg"
+        },
+        {
+          "id": "n-isom-as-tungtvann-moscow-mule",
+          "favoriteId": "tungtvann-moscow-mule",
+          "name": "Tungtvann - Moscow Mule",
+          "category": "ready-to-drink",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/10/7090034396593_A1N1_1200px-300x300.png"
+        },
+        {
+          "id": "n-isom-as-tungtvann-pasjonsfrukt-and-sitron",
+          "favoriteId": "tungtvann-pasjonsfrukt-and-sitron",
+          "name": "Tungtvann - Pasjonsfrukt & Sitron",
+          "category": "ready-to-drink",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/10/7090034396531_A1N1_1200px-300x300.png"
+        },
+        {
+          "id": "n-isom-as-tungtvann-rabarbra-and-grapefrukt",
+          "favoriteId": "tungtvann-rabarbra-and-grapefrukt",
+          "name": "Tungtvann - Rabarbra & Grapefrukt",
+          "category": "ready-to-drink",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://noisom.no/produkter/",
+          "imageUrl": "https://noisom.no/wp-content/uploads/2021/10/7090034396562_A1N1_1200px-300x300.png"
+        }
+      ]
+    },
+    {
+      "id": "smogen-destilleri-ab",
+      "name": "Smögen Destilleri AB",
+      "websiteUrl": "https://www.smughabranneri.se/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "smogen-destilleri-ab-vinmonopolet-19792202",
+          "favoriteId": "vinmonopolet-19792202",
+          "name": "Smygha Soldimma Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19792202",
+          "productUrl": "https://www.vinmonopolet.no/p/19792202",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19792202-1.jpg"
+        },
+        {
+          "id": "smogen-destilleri-ab-vinmonopolet-19792302",
+          "favoriteId": "vinmonopolet-19792302",
+          "name": "Smygha Mareld Blue Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19792302",
+          "productUrl": "https://www.vinmonopolet.no/p/19792302",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19792302-1.jpg"
+        },
+        {
+          "id": "smogen-destilleri-ab-vinmonopolet-19792402",
+          "favoriteId": "vinmonopolet-19792402",
+          "name": "Smygha Sjörök Navy Strength Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "19792402",
+          "productUrl": "https://www.vinmonopolet.no/p/19792402",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19792402-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bonum-as",
+      "name": "Bonum AS",
+      "websiteUrl": "https://www.bonumwine.no/",
+      "type": "gin",
+      "products": [
+        {
+          "id": "bonum-as-vinmonopolet-20596901",
+          "favoriteId": "vinmonopolet-20596901",
+          "name": "Angr Løv Nordic Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "20596901",
+          "productUrl": "https://www.vinmonopolet.no/p/20596901",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/20596901-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-14736301",
+          "favoriteId": "vinmonopolet-14736301",
+          "name": "Bartavelle Gin Strawberry & Rubarb",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14736301",
+          "productUrl": "https://www.vinmonopolet.no/p/14736301",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14736301-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-17171501",
+          "favoriteId": "vinmonopolet-17171501",
+          "name": "Bartavelle Lemon",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17171501",
+          "productUrl": "https://www.vinmonopolet.no/p/17171501",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17171501-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-14736101",
+          "favoriteId": "vinmonopolet-14736101",
+          "name": "Bartavelle Mediterranean Grapefruit & Rosmary",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14736101",
+          "productUrl": "https://www.vinmonopolet.no/p/14736101",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14736101-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-17133601",
+          "favoriteId": "vinmonopolet-17133601",
+          "name": "Bartavelle Melon & Basil",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "17133601",
+          "productUrl": "https://www.vinmonopolet.no/p/17133601",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/17133601-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-14736201",
+          "favoriteId": "vinmonopolet-14736201",
+          "name": "Bartavelle Peach from Provence & Verbena",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14736201",
+          "productUrl": "https://www.vinmonopolet.no/p/14736201",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14736201-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-11052801",
+          "favoriteId": "vinmonopolet-11052801",
+          "name": "Boatyard Double Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11052801",
+          "productUrl": "https://www.vinmonopolet.no/p/11052801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11052801-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-11278801",
+          "favoriteId": "vinmonopolet-11278801",
+          "name": "Boatyard Old Tom Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "11278801",
+          "productUrl": "https://www.vinmonopolet.no/p/11278801",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11278801-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-7684701",
+          "favoriteId": "vinmonopolet-7684701",
+          "name": "By the Dutch Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "7684701",
+          "productUrl": "https://www.vinmonopolet.no/p/7684701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/7684701-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-14736401",
+          "favoriteId": "vinmonopolet-14736401",
+          "name": "Mistral Rosé Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "14736401",
+          "productUrl": "https://www.vinmonopolet.no/p/14736401",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/14736401-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-5419701",
+          "favoriteId": "vinmonopolet-5419701",
+          "name": "Pink Pepper Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "5419701",
+          "productUrl": "https://www.vinmonopolet.no/p/5419701",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/5419701-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-12168102",
+          "favoriteId": "vinmonopolet-12168102",
+          "name": "Portofino Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "12168102",
+          "productUrl": "https://www.vinmonopolet.no/p/12168102",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/12168102-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-8324202",
+          "favoriteId": "vinmonopolet-8324202",
+          "name": "Soil & soul handcrafted Riesling Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "8324202",
+          "productUrl": "https://www.vinmonopolet.no/p/8324202",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/8324202-1.jpg"
+        },
+        {
+          "id": "bonum-as-vinmonopolet-10412702",
+          "favoriteId": "vinmonopolet-10412702",
+          "name": "The Illusionist Dry Gin",
+          "category": "gin",
+          "retailer": "Vinmonopolet",
+          "productNumber": "10412702",
+          "productUrl": "https://www.vinmonopolet.no/p/10412702",
+          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/10412702-1.jpg"
+        }
+      ]
+    }
+  ]
+}
