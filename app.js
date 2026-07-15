@@ -17,6 +17,7 @@ const filters = document.querySelector("#category-filters");
 const favoriteCount = document.querySelector("#favorite-count");
 const resultSummary = document.querySelector("#result-summary");
 const toTop = document.querySelector("#to-top");
+const controlsPanel = document.querySelector(".controls");
 const sendListForm = document.querySelector("#send-list-form");
 const sendListMessage = document.querySelector("#send-list-message");
 
@@ -194,6 +195,11 @@ function scrollToElement(element) {
   requestAnimationFrame(() => element.scrollIntoView({ behavior, block: "start" }));
 }
 
+function scrollToPageTop() {
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior }));
+}
+
 function allProducts() {
   return state.exhibitors.flatMap((exhibitor) => (exhibitor.products || []).map((product) => ({ ...product, exhibitorName: exhibitor.name })));
 }
@@ -247,7 +253,7 @@ filters.addEventListener("click", (event) => {
     item.setAttribute("aria-pressed", String(active));
   });
   render();
-  scrollToElement(document.querySelector(".controls"));
+  scrollToPageTop();
 });
 
 app.addEventListener("click", (event) => {
@@ -292,7 +298,15 @@ app.addEventListener("click", (event) => {
   }
 });
 
-window.addEventListener("scroll", () => toTop.classList.toggle("is-visible", window.scrollY > 650), { passive: true });
+function updateScrollUi() {
+  const controlsAreStuck = controlsPanel.getBoundingClientRect().top <= 1 && window.scrollY > 100;
+  controlsPanel.classList.toggle("is-stuck", controlsAreStuck);
+  resultSummary.classList.toggle("is-hidden", controlsAreStuck);
+  toTop.classList.toggle("is-visible", window.scrollY > 650);
+}
+
+window.addEventListener("scroll", updateScrollUi, { passive: true });
+updateScrollUi();
 toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 sendListForm.addEventListener("submit", (event) => {
