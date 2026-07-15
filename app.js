@@ -142,7 +142,7 @@ function exhibitorCard(exhibitor, products) {
       <header class="exhibitor__header">
         <div class="exhibitor__info">
           <span class="exhibitor__kicker">${products.length} ${itemWord}</span>
-          <button class="exhibitor__title" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${escapeHtml(exhibitor.name)}</button>
+          <button class="exhibitor__title" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${displayExhibitorName(exhibitor.name)}</button>
           ${website}
         </div>
         <button class="exhibitor__toggle" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${isOpen ? "Lukk" : (isContent ? "Mer info" : "Vis produkter")}</button>
@@ -187,6 +187,10 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value);
+}
+
+function displayExhibitorName(name) {
+  return escapeHtml(name).replace("Håndverksdestilleri", "Håndverks&shy;destilleri");
 }
 
 function scrollToElement(element) {
