@@ -1,6 +1,12 @@
 const DATA_URL = "./data/festival-data-v0.2.json";
 const STORAGE_KEY = "fgf-2026-favorites";
 const TASTING_STORAGE_KEY = "fgf-2026-tastings";
+const DEVICE_ID_STORAGE_KEY = "ginfestival_device_id";
+const EVENT_YEAR = 2026;
+const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
+  ? "http://localhost:8787"
+  : "https://ginfestival-2026-api.ole-leister.workers.dev";
+const ratingSaveChains = new Map();
 
 const state = {
   exhibitors: [],
@@ -8,6 +14,7 @@ const state = {
   filter: "all",
   favorites: loadFavorites(),
   tastings: loadTastings(),
+  ratingSync: {},
   openExhibitorId: null,
 };
 
@@ -55,6 +62,104 @@ function saveTastings() {
   }
 }
 
+function getDeviceId() {
+  let deviceId = localStorage.getItem(DEVICE_ID_STORAGE_KEY);
+  if (!deviceId) {
+    deviceId = crypto.randomUUID();
+    localStorage.setItem(DEVICE_ID_STORAGE_KEY, deviceId);
+  }
+  return deviceId;
+}
+
+function getExistingDeviceId() {
+  return localStorage.getItem(DEVICE_ID_STORAGE_KEY);
+}
+
+async function postRating(productId, rating) {
+  if (!API_BASE_URL) {
+    throw new Error("API-et er ikke konfigurert for dette nettstedet ennå.");
+  }
+
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 8_000);
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/ratings`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        deviceId: getDeviceId(),
+        ginId: productId,
+        eventYear: EVENT_YEAR,
+        rating,
+      }),
+      signal: controller.signal,
+    });
+    const result = await response.json().catch(() => null);
+    if (!response.ok || !result?.success) {
+      throw new Error(result?.message || `API-feil ${response.status}`);
+    }
+    return result.rating;
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
+function queueRatingSave(productId, rating) {
+  state.ratingSync[productId] = "saving";
+  render();
+
+  const previousSave = ratingSaveChains.get(productId) || Promise.resolve();
+  const currentSave = previousSave
+    .catch(() => undefined)
+    .then(() => postRating(productId, rating))
+    .then(() => {
+      if (state.tastings[productId]?.rating === rating) {
+        state.ratingSync[productId] = "saved";
+        render();
+      }
+    })
+    .catch((error) => {
+      console.error("Kunne ikke synkronisere terningkast:", error);
+      if (state.tastings[productId]?.rating === rating) {
+        state.ratingSync[productId] = "error";
+        render();
+      }
+    })
+    .finally(() => {
+      if (ratingSaveChains.get(productId) === currentSave) {
+        ratingSaveChains.delete(productId);
+      }
+    });
+
+  ratingSaveChains.set(productId, currentSave);
+}
+
+async function restoreRatingsFromApi() {
+  const deviceId = getExistingDeviceId();
+  if (!API_BASE_URL || !deviceId) return;
+
+  try {
+    const url = `${API_BASE_URL}/api/ratings/device/${encodeURIComponent(deviceId)}?eventYear=${EVENT_YEAR}`;
+    const response = await fetch(url);
+    const result = await response.json().catch(() => null);
+    if (!response.ok || !result?.success || !Array.isArray(result.ratings)) {
+      throw new Error(result?.message || `API-feil ${response.status}`);
+    }
+
+    const knownProductIds = new Set(allProducts().map(favoriteId));
+    result.ratings.forEach(({ ginId, rating }) => {
+      if (knownProductIds.has(ginId) && Number.isInteger(rating) && rating >= 1 && rating <= 6) {
+        state.tastings[ginId] = { tasted: true, rating };
+        state.ratingSync[ginId] = "saved";
+      }
+    });
+    saveTastings();
+  } catch (error) {
+    console.error("Kunne ikke hente lagrede terningkast:", error);
+  }
+}
+
 function favoriteId(product) {
   return product.favoriteId || product.id;
 }
@@ -97,6 +202,7 @@ function productCard(product) {
   const tasting = state.tastings[id];
   const isTasted = Boolean(tasting?.tasted);
   const rating = Number(tasting?.rating) || 0;
+  const syncStatus = state.ratingSync[id];
   const name = escapeHtml(product.name || "Uten navn");
   const productLink = product.productUrl
     ? `<a class="product__link" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${product.retailer ? `Se produktet hos ${escapeHtml(product.retailer)}` : "Se produktet"} <span aria-hidden="true">↗</span></a>`
@@ -111,6 +217,7 @@ function productCard(product) {
       <div class="rating__choices">
         ${[1, 2, 3, 4, 5, 6].map((value) => `<button class="rating__button${rating === value ? " is-selected" : ""}" type="button" data-rating="${value}" data-product-id="${escapeAttribute(id)}" aria-pressed="${rating === value}" aria-label="Terningkast ${value}">${["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"][value - 1]}</button>`).join("")}
       </div>
+      ${syncStatus ? `<span class="rating__status rating__status--${syncStatus}" aria-live="polite">${syncStatus === "saving" ? "Lagrer …" : syncStatus === "saved" ? "Lagret" : "Ikke synkronisert – trykk på terningen igjen for å prøve på nytt"}</span>` : ""}
     </div>` : "";
 
   return `
@@ -280,6 +387,7 @@ app.addEventListener("click", (event) => {
     const id = tastedButton.dataset.tastedId;
     if (state.tastings[id]?.tasted) {
       delete state.tastings[id];
+      delete state.ratingSync[id];
     } else {
       state.tastings[id] = { tasted: true, rating: null };
     }
@@ -293,7 +401,7 @@ app.addEventListener("click", (event) => {
     const id = ratingButton.dataset.productId;
     state.tastings[id] = { tasted: true, rating: Number(ratingButton.dataset.rating) };
     saveTastings();
-    render();
+    queueRatingSave(id, state.tastings[id].rating);
   }
 });
 
@@ -343,6 +451,7 @@ async function init() {
     const data = await response.json();
     if (!Array.isArray(data.exhibitors)) throw new Error("Ugyldig datastruktur");
     state.exhibitors = [...data.exhibitors].sort((a, b) => a.name.localeCompare(b.name, "nb-NO", { sensitivity: "base" }));
+    await restoreRatingsFromApi();
     render();
   } catch (error) {
     console.error("Kunne ikke laste festivaldata:", error);

@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ginfestival-2026-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ginfestival-2026",
+      "database_id": "9021444b-954e-40e6-873e-f2a0fb05a17f"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}
