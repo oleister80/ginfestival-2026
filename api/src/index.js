@@ -176,6 +176,45 @@ async function getDeviceRatings(request, env, url, deviceId) {
   });
 }
 
+async function getStatistics(request, env, url) {
+  const eventYearText = url.searchParams.get("eventYear") || "2026";
+  const eventYear = Number(eventYearText);
+  validateEventYear(eventYear);
+
+  const { results } = await env.DB.prepare(`
+    SELECT
+      gin_id,
+      COUNT(*) AS rating_count,
+      ROUND(AVG(rating), 2) AS average_rating,
+      SUM(CASE WHEN rating = 1 THEN 1 ELSE 0 END) AS rating_1,
+      SUM(CASE WHEN rating = 2 THEN 1 ELSE 0 END) AS rating_2,
+      SUM(CASE WHEN rating = 3 THEN 1 ELSE 0 END) AS rating_3,
+      SUM(CASE WHEN rating = 4 THEN 1 ELSE 0 END) AS rating_4,
+      SUM(CASE WHEN rating = 5 THEN 1 ELSE 0 END) AS rating_5,
+      SUM(CASE WHEN rating = 6 THEN 1 ELSE 0 END) AS rating_6
+    FROM ratings
+    WHERE event_year = ?
+    GROUP BY gin_id
+    ORDER BY average_rating DESC, rating_count DESC, gin_id ASC
+  `).bind(eventYear).all();
+
+  const gins = results.map((row) => ({
+    ginId: row.gin_id,
+    ratingCount: row.rating_count,
+    averageRating: row.average_rating,
+    distribution: {
+      1: row.rating_1,
+      2: row.rating_2,
+      3: row.rating_3,
+      4: row.rating_4,
+      5: row.rating_5,
+      6: row.rating_6,
+    },
+  }));
+
+  return jsonResponse(request, { success: true, eventYear, gins });
+}
+
 class ApiError extends Error {
   constructor(status, message) {
     super(message);
@@ -218,6 +257,13 @@ export default {
           return jsonResponse(request, { success: false, message: "Method not allowed" }, 405, { Allow: "GET" });
         }
         return await getDeviceRatings(request, env, url, decodeURIComponent(deviceRatingsMatch[1]));
+      }
+
+      if (url.pathname === "/api/statistics") {
+        if (request.method !== "GET") {
+          return jsonResponse(request, { success: false, message: "Method not allowed" }, 405, { Allow: "GET" });
+        }
+        return await getStatistics(request, env, url);
       }
 
       return jsonResponse(request, { success: false, message: "Not found" }, 404);
