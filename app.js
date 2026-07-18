@@ -2,11 +2,14 @@ const DATA_URL = "./data/festival-data-v0.2.json";
 const STORAGE_KEY = "fgf-2026-favorites";
 const TASTING_STORAGE_KEY = "fgf-2026-tastings";
 const DEVICE_ID_STORAGE_KEY = "ginfestival_device_id";
+const RATING_OUTBOX_STORAGE_KEY = "fgf-2026-rating-outbox";
 const EVENT_YEAR = 2026;
 const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? "http://localhost:8787"
   : "https://ginfestival-2026-api.ole-leister.workers.dev";
-const ratingSaveChains = new Map();
+const ratingOutbox = loadRatingOutbox();
+let ratingFlushPromise = null;
+let ratingRetryTimer = null;
 
 const state = {
   exhibitors: [],
@@ -14,7 +17,6 @@ const state = {
   filter: "all",
   favorites: loadFavorites(),
   tastings: loadTastings(),
-  ratingSync: {},
   openExhibitorId: null,
 };
 
@@ -62,6 +64,23 @@ function saveTastings() {
   }
 }
 
+function loadRatingOutbox() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(RATING_OUTBOX_STORAGE_KEY));
+    return stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveRatingOutbox() {
+  try {
+    localStorage.setItem(RATING_OUTBOX_STORAGE_KEY, JSON.stringify(ratingOutbox));
+  } catch {
+    // Terningkastet er fortsatt lagret i smakslinjen for denne nettleseren.
+  }
+}
+
 function getDeviceId() {
   let deviceId = localStorage.getItem(DEVICE_ID_STORAGE_KEY);
   if (!deviceId) {
@@ -106,33 +125,59 @@ async function postRating(productId, rating) {
 }
 
 function queueRatingSave(productId, rating) {
-  state.ratingSync[productId] = "saving";
-  render();
+  ratingOutbox[productId] = {
+    rating,
+    revision: crypto.randomUUID(),
+  };
+  saveRatingOutbox();
+  void flushRatingOutbox();
+}
 
-  const previousSave = ratingSaveChains.get(productId) || Promise.resolve();
-  const currentSave = previousSave
-    .catch(() => undefined)
-    .then(() => postRating(productId, rating))
-    .then(() => {
-      if (state.tastings[productId]?.rating === rating) {
-        state.ratingSync[productId] = "saved";
-        render();
-      }
-    })
-    .catch((error) => {
-      console.error("Kunne ikke synkronisere terningkast:", error);
-      if (state.tastings[productId]?.rating === rating) {
-        state.ratingSync[productId] = "error";
-        render();
-      }
-    })
-    .finally(() => {
-      if (ratingSaveChains.get(productId) === currentSave) {
-        ratingSaveChains.delete(productId);
-      }
-    });
+function scheduleRatingRetry() {
+  if (ratingRetryTimer || !Object.keys(ratingOutbox).length) return;
+  ratingRetryTimer = window.setTimeout(() => {
+    ratingRetryTimer = null;
+    void flushRatingOutbox();
+  }, 30_000);
+}
 
-  ratingSaveChains.set(productId, currentSave);
+function flushRatingOutbox() {
+  if (ratingFlushPromise || !Object.keys(ratingOutbox).length) {
+    return ratingFlushPromise;
+  }
+  if (!navigator.onLine) {
+    scheduleRatingRetry();
+    return null;
+  }
+
+  if (ratingRetryTimer) {
+    window.clearTimeout(ratingRetryTimer);
+    ratingRetryTimer = null;
+  }
+
+  ratingFlushPromise = (async () => {
+    while (navigator.onLine) {
+      const nextEntry = Object.entries(ratingOutbox)[0];
+      if (!nextEntry) break;
+
+      const [productId, pending] = nextEntry;
+      try {
+        await postRating(productId, pending.rating);
+      } catch {
+        break;
+      }
+
+      if (ratingOutbox[productId]?.revision === pending.revision) {
+        delete ratingOutbox[productId];
+        saveRatingOutbox();
+      }
+    }
+  })().finally(() => {
+    ratingFlushPromise = null;
+    scheduleRatingRetry();
+  });
+
+  return ratingFlushPromise;
 }
 
 async function restoreRatingsFromApi() {
@@ -149,9 +194,9 @@ async function restoreRatingsFromApi() {
 
     const knownProductIds = new Set(allProducts().map(favoriteId));
     result.ratings.forEach(({ ginId, rating }) => {
-      if (knownProductIds.has(ginId) && Number.isInteger(rating) && rating >= 1 && rating <= 6) {
+      const hasPendingLocalRating = Boolean(ratingOutbox[ginId]);
+      if (!hasPendingLocalRating && knownProductIds.has(ginId) && Number.isInteger(rating) && rating >= 1 && rating <= 6) {
         state.tastings[ginId] = { tasted: true, rating };
-        state.ratingSync[ginId] = "saved";
       }
     });
     saveTastings();
@@ -202,7 +247,6 @@ function productCard(product) {
   const tasting = state.tastings[id];
   const isTasted = Boolean(tasting?.tasted);
   const rating = Number(tasting?.rating) || 0;
-  const syncStatus = state.ratingSync[id];
   const name = escapeHtml(product.name || "Uten navn");
   const productLink = product.productUrl
     ? `<a class="product__link" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${product.retailer ? `Se produktet hos ${escapeHtml(product.retailer)}` : "Se produktet"} <span aria-hidden="true">↗</span></a>`
@@ -217,7 +261,6 @@ function productCard(product) {
       <div class="rating__choices">
         ${[1, 2, 3, 4, 5, 6].map((value) => `<button class="rating__button${rating === value ? " is-selected" : ""}" type="button" data-rating="${value}" data-product-id="${escapeAttribute(id)}" aria-pressed="${rating === value}" aria-label="Terningkast ${value}">${["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"][value - 1]}</button>`).join("")}
       </div>
-      ${syncStatus ? `<span class="rating__status rating__status--${syncStatus}" aria-live="polite">${syncStatus === "saving" ? "Lagrer …" : syncStatus === "saved" ? "Lagret" : "Ikke synkronisert – trykk på terningen igjen for å prøve på nytt"}</span>` : ""}
     </div>` : "";
 
   return `
@@ -387,7 +430,8 @@ app.addEventListener("click", (event) => {
     const id = tastedButton.dataset.tastedId;
     if (state.tastings[id]?.tasted) {
       delete state.tastings[id];
-      delete state.ratingSync[id];
+      delete ratingOutbox[id];
+      saveRatingOutbox();
     } else {
       state.tastings[id] = { tasted: true, rating: null };
     }
@@ -401,6 +445,7 @@ app.addEventListener("click", (event) => {
     const id = ratingButton.dataset.productId;
     state.tastings[id] = { tasted: true, rating: Number(ratingButton.dataset.rating) };
     saveTastings();
+    render();
     queueRatingSave(id, state.tastings[id].rating);
   }
 });
@@ -413,6 +458,11 @@ function updateScrollUi() {
 }
 
 window.addEventListener("scroll", updateScrollUi, { passive: true });
+window.addEventListener("online", () => void flushRatingOutbox());
+window.addEventListener("focus", () => void flushRatingOutbox());
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") void flushRatingOutbox();
+});
 updateScrollUi();
 toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
@@ -453,6 +503,7 @@ async function init() {
     state.exhibitors = [...data.exhibitors].sort((a, b) => a.name.localeCompare(b.name, "nb-NO", { sensitivity: "base" }));
     await restoreRatingsFromApi();
     render();
+    void flushRatingOutbox();
   } catch (error) {
     console.error("Kunne ikke laste festivaldata:", error);
     app.setAttribute("aria-busy", "false");
