@@ -88,9 +88,6 @@ main { max-width: 1120px; margin: -34px auto 0; padding: 0 16px 70px; position: 
 .rating__button { width: 100%; min-width: 0; height: 34px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--muted); cursor: pointer; font-family: Georgia, serif; font-size: 1.35rem; line-height: 1; }
 .rating__button:hover { border-color: var(--gold); color: var(--ink); }
 .rating__button.is-selected { border-color: var(--brick); background: var(--brick); color: white; }
-.rating__status { width: 100%; min-height: 1em; color: var(--muted); font-size: .67rem; }
-.rating__status--saved { color: #37714f; }
-.rating__status--error { color: #a33b30; }
 .favorite:focus-visible, .tasted:focus-visible, .rating__button:focus-visible, .exhibitor__title:focus-visible, .exhibitor__toggle:focus-visible, .filter:focus-visible, .to-top:focus-visible { outline: 3px solid rgb(239 216 92 / 50%); outline-offset: 2px; }
 .content-card { display: grid; gap: 18px; padding: 22px 18px; background: linear-gradient(135deg, #fffaf0, #f5eddb); }
 .content-card__image { display: grid; min-height: 105px; place-items: center; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: white; }
