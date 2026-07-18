@@ -6,6 +6,16 @@ const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostnam
 
 const statsList = document.querySelector("#stats-list");
 const statsUpdated = document.querySelector("#stats-updated");
+const statsDevices = document.querySelector("#stats-devices");
+const statsFilters = [...document.querySelectorAll("[data-stats-filter]")];
+let statisticsByProduct = [];
+let productsById = new Map();
+
+function statisticsCategory(category) {
+  if (["gin", "cocktail"].includes(category)) return "gin";
+  if (["mixer", "ready-to-drink"].includes(category)) return "other";
+  return null;
+}
 
 function favoriteId(product) {
   return product.favoriteId || product.id;
@@ -75,6 +85,24 @@ function renderStatistics(gins, productIndex) {
   }).join("");
 }
 
+function setFilter(filter) {
+  statsFilters.forEach((button) => {
+    const active = button.dataset.statsFilter === filter;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  const visibleStatistics = filter === "all"
+    ? statisticsByProduct
+    : statisticsByProduct.filter((item) => item.category === filter);
+  renderStatistics(visibleStatistics, productsById);
+}
+
+function renderUniqueDevices(uniqueDevices) {
+  statsDevices.innerHTML = `
+    <strong>Stemmer fra ${uniqueDevices.total} unike ${uniqueDevices.total === 1 ? "enhet" : "enheter"}</strong>
+    <span>${uniqueDevices.gin} på gin · ${uniqueDevices.other} på tonic / andre produkter</span>`;
+}
+
 async function init() {
   try {
     const [dataResponse, statisticsResponse] = await Promise.all([
@@ -91,11 +119,29 @@ async function init() {
       throw new Error("Ugyldig datastruktur");
     }
 
-    const productIndex = buildProductIndex(data.exhibitors);
-    const ginStatistics = statistics.gins.filter((gin) =>
-      ["gin", "cocktail"].includes(productIndex.get(gin.ginId)?.category),
-    );
-    renderStatistics(ginStatistics, productIndex);
+    productsById = buildProductIndex(data.exhibitors);
+    statisticsByProduct = statistics.gins
+      .map((item) => ({
+        ...item,
+        category: statisticsCategory(productsById.get(item.ginId)?.category),
+      }))
+      .filter((item) => item.category);
+
+    const uniqueResponse = await fetch(`${API_BASE_URL}/api/statistics/unique-devices`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventYear: EVENT_YEAR,
+        ginIds: statisticsByProduct.filter((item) => item.category === "gin").map((item) => item.ginId),
+        otherIds: statisticsByProduct.filter((item) => item.category === "other").map((item) => item.ginId),
+      }),
+    });
+    if (!uniqueResponse.ok) throw new Error("Kunne ikke hente deltakerstatistikk");
+    const uniqueStatistics = await uniqueResponse.json();
+    if (!uniqueStatistics.success) throw new Error("Ugyldig deltakerstatistikk");
+
+    renderUniqueDevices(uniqueStatistics.uniqueDevices);
+    setFilter("all");
     statsUpdated.textContent = `Oppdatert ${new Intl.DateTimeFormat("nb-NO", {
       dateStyle: "short",
       timeStyle: "short",
@@ -107,5 +153,9 @@ async function init() {
     statsList.innerHTML = '<div class="status status--error"><h2>Statistikken kunne ikke lastes</h2><p>Prøv å laste siden på nytt.</p></div>';
   }
 }
+
+statsFilters.forEach((button) => {
+  button.addEventListener("click", () => setFilter(button.dataset.statsFilter));
+});
 
 init();
