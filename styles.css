@@ -179,6 +179,30 @@ footer a { color: var(--gold); font-size: .78rem; }
   .send-list__actions { grid-template-columns: 1fr 1fr; }
 }
 
+.stats-page { min-height: 100vh; background: var(--cream); }
+.stats-main { max-width: 900px; margin: 0 auto; padding: 38px 16px 70px; }
+.stats-header { margin-bottom: 30px; padding: 26px 22px; border-radius: var(--radius); background: var(--night); color: #fffef3; }
+.stats-header .eyebrow { color: var(--gold); }
+.stats-header h1 { margin: 5px 0 8px; font: 700 clamp(2rem, 7vw, 3.5rem)/1 "Playfair Display", Georgia, serif; }
+.stats-header > p:last-child { max-width: 620px; margin: 0; color: #e8e0d2; line-height: 1.55; }
+.stats-summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.stats-summary h2 { margin: 0; font: 700 1.4rem/1.2 "Playfair Display", Georgia, serif; }
+.stats-summary p { margin: 0; color: var(--muted); font-size: .72rem; }
+.stats-list { display: grid; gap: 10px; }
+.stats-card { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 12px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fffdf8; box-shadow: 0 8px 25px rgb(41 31 24 / 6%); }
+.stats-card__rank { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: #efe5d2; color: var(--brick); font-weight: 800; }
+.stats-card__info h3 { margin: 0; font: 700 1rem/1.25 "Playfair Display", Georgia, serif; }
+.stats-card__info p { margin: 4px 0 0; color: var(--muted); font-size: .7rem; }
+.stats-card__score { grid-column: 2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
+.stats-card__score strong { color: var(--brick); font: 700 1.8rem/1 Georgia, serif; }
+.stats-card__score span { color: var(--muted); font-size: .72rem; }
+
+@media (min-width: 620px) {
+  .stats-main { padding-top: 55px; }
+  .stats-card { grid-template-columns: 42px minmax(0, 1fr) auto; padding: 18px 20px; }
+  .stats-card__score { grid-column: auto; display: grid; justify-items: end; gap: 3px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
