@@ -215,6 +215,53 @@ async function getStatistics(request, env, url) {
   return jsonResponse(request, { success: true, eventYear, gins });
 }
 
+function validateProductGroup(value, name) {
+  if (!Array.isArray(value) || value.length > 250) {
+    throw new ApiError(400, `${name} must be an array with at most 250 product identifiers`);
+  }
+
+  const uniqueIds = [...new Set(value)];
+  uniqueIds.forEach((ginId) => {
+    if (typeof ginId !== "string" || ginId.length > 160 || !GIN_ID_PATTERN.test(ginId)) {
+      throw new ApiError(400, `${name} contains an invalid product identifier`);
+    }
+  });
+  return uniqueIds;
+}
+
+async function getUniqueDeviceStatistics(request, env) {
+  const body = await readJsonBody(request);
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    throw new ApiError(400, "Request body must be a JSON object");
+  }
+
+  const { eventYear } = body;
+  validateEventYear(eventYear);
+  const ginIds = validateProductGroup(body.ginIds, "ginIds");
+  const otherIds = validateProductGroup(body.otherIds, "otherIds");
+  const ginPlaceholders = ginIds.length ? ginIds.map(() => "?").join(", ") : "NULL";
+  const otherPlaceholders = otherIds.length ? otherIds.map(() => "?").join(", ") : "NULL";
+
+  const row = await env.DB.prepare(`
+    SELECT
+      COUNT(DISTINCT device_id) AS total,
+      COUNT(DISTINCT CASE WHEN gin_id IN (${ginPlaceholders}) THEN device_id END) AS gin,
+      COUNT(DISTINCT CASE WHEN gin_id IN (${otherPlaceholders}) THEN device_id END) AS other
+    FROM ratings
+    WHERE event_year = ?
+  `).bind(...ginIds, ...otherIds, eventYear).first();
+
+  return jsonResponse(request, {
+    success: true,
+    eventYear,
+    uniqueDevices: {
+      total: row?.total || 0,
+      gin: row?.gin || 0,
+      other: row?.other || 0,
+    },
+  });
+}
+
 class ApiError extends Error {
   constructor(status, message) {
     super(message);
@@ -264,6 +311,13 @@ export default {
           return jsonResponse(request, { success: false, message: "Method not allowed" }, 405, { Allow: "GET" });
         }
         return await getStatistics(request, env, url);
+      }
+
+      if (url.pathname === "/api/statistics/unique-devices") {
+        if (request.method !== "POST") {
+          return jsonResponse(request, { success: false, message: "Method not allowed" }, 405, { Allow: "POST" });
+        }
+        return await getUniqueDeviceStatistics(request, env);
       }
 
       return jsonResponse(request, { success: false, message: "Not found" }, 404);

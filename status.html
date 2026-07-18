@@ -15,10 +15,16 @@
       <header class="stats-header">
         <p class="eyebrow">Fredrikstad Ginfestival 2026</p>
         <h1>Status terningkast</h1>
-        <p>Gin med minst én registrert stemme, sortert etter høyeste gjennomsnitt.</p>
+        <p>Produkter med minst én registrert stemme, sortert etter høyeste gjennomsnitt.</p>
       </header>
 
       <section aria-labelledby="stats-title">
+        <div id="stats-devices" class="stats-devices" aria-live="polite"></div>
+        <div class="stats-filters" aria-label="Filtrer produktstatistikk">
+          <button class="filter is-active" type="button" data-stats-filter="all" aria-pressed="true">Alle</button>
+          <button class="filter" type="button" data-stats-filter="gin" aria-pressed="false">Gin</button>
+          <button class="filter" type="button" data-stats-filter="other" aria-pressed="false">Tonic / annet</button>
+        </div>
         <div class="stats-summary">
           <h2 id="stats-title">Resultater</h2>
           <p id="stats-updated" aria-live="polite"></p>
