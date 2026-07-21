@@ -38,6 +38,7 @@
     {
       "id": "nordlof-hildringen-gard",
       "name": "Hildringen",
+      "visible": false,
       "websiteUrl": "https://hildringen.no/",
       "type": "gin",
       "products": [

@@ -302,7 +302,7 @@ function exhibitorCard(exhibitor, products) {
 }
 
 function visibleExhibitors() {
-  return state.exhibitors.map((exhibitor) => {
+  return state.exhibitors.filter((exhibitor) => exhibitor.visible !== false).map((exhibitor) => {
     const exhibitorMatch = normalize(exhibitor.name).includes(state.query);
     const products = (exhibitor.products || []).filter((product) => {
       const queryMatch = !state.query || exhibitorMatch || normalize(product.name).includes(state.query);
@@ -350,7 +350,9 @@ function scrollToElement(element) {
 }
 
 function allProducts() {
-  return state.exhibitors.flatMap((exhibitor) => (exhibitor.products || []).map((product) => ({ ...product, exhibitorName: exhibitor.name })));
+  return state.exhibitors
+    .filter((exhibitor) => exhibitor.visible !== false)
+    .flatMap((exhibitor) => (exhibitor.products || []).map((product) => ({ ...product, exhibitorName: exhibitor.name })));
 }
 
 function productsForEmail(listType) {
