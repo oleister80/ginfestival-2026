@@ -527,6 +527,7 @@
     {
       "id": "kringler-farm-distillery",
       "name": "Kringler Farm Distillery",
+      "visible": false,
       "websiteUrl": "https://kringler.no/gardsdestilleriet/",
       "type": "gin",
       "products": [
