@@ -115,6 +115,7 @@ main { max-width: 1120px; margin: -34px auto 0; padding: 0 16px 70px; position: 
 .masterclass__header h2 { margin: 0; font: 700 2rem/1.1 "Playfair Display", serif; }
 .masterclass__header > p:last-child { margin: 10px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.55; }
 .masterclass__days { display: grid; gap: 24px; }
+.masterclass__days--single { grid-template-columns: minmax(0, 1fr); }
 .masterclass-day > h3 { margin: 0 0 10px; color: var(--brick); font: 700 1.25rem/1.2 "Playfair Display", serif; }
 .masterclass-card { overflow: hidden; scroll-margin-top: 155px; border: 1px solid var(--line); border-radius: 15px; background: var(--card); box-shadow: 0 8px 24px rgb(50 57 39 / 7%); }
 .masterclass-card + .masterclass-card { margin-top: 10px; }

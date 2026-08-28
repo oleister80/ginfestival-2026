@@ -6,12 +6,12 @@
     "notes": "Vinmonopolet imageUrl is generated from productNumber using https://bilder.vinmonopolet.no/cache/600x600-0/{productNumber}-1.jpg. Product id is unique per exhibitor/product row. favoriteId is stable across duplicated Vinmonopolet/Systembolaget products."
   },
   "stats": {
-    "exhibitorCount": 17,
-    "productCount": 140,
+    "exhibitorCount": 18,
+    "productCount": 145,
     "productCountByCategory": {
       "cocktail": 1,
       "content": 1,
-      "gin": 121,
+      "gin": 126,
       "mixer": 14,
       "ready-to-drink": 3
     }
@@ -1414,6 +1414,54 @@
           "productNumber": "19792402",
           "productUrl": "https://www.vinmonopolet.no/p/19792402",
           "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19792402-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "losjeveien-2-as",
+      "name": "Losjeveien 2 AS",
+      "websiteUrl": null,
+      "type": "gin",
+      "products": [
+        {
+          "id": "losjeveien-2-as-highland-gin-skog",
+          "favoriteId": "highland-gin-skog",
+          "name": "Highland Gin - SKOG",
+          "category": "gin",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": null,
+          "imageUrl": null
+        },
+        {
+          "id": "losjeveien-2-as-systembolaget-3230601",
+          "favoriteId": "systembolaget-3230601",
+          "name": "Ógin Nature",
+          "category": "gin",
+          "retailer": "Systembolaget",
+          "productNumber": "3230601",
+          "productUrl": "https://www.systembolaget.se/produkt/sprit/ogin-3230601/",
+          "imageUrl": null
+        },
+        {
+          "id": "losjeveien-2-as-an-dulaman-irish-maritime-gin",
+          "favoriteId": "an-dulaman-irish-maritime-gin",
+          "name": "An Dúlamán Irish Maritime Gin",
+          "category": "gin",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": null,
+          "imageUrl": null
+        },
+        {
+          "id": "losjeveien-2-as-an-dulaman-santa-ana-gin",
+          "favoriteId": "an-dulaman-santa-ana-gin",
+          "name": "An Dulaman Santa Ana Gin",
+          "category": "gin",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": null,
+          "imageUrl": null
         }
       ]
     },
