@@ -4,6 +4,7 @@ const TASTING_STORAGE_KEY = "fgf-2026-tastings";
 const DEVICE_ID_STORAGE_KEY = "ginfestival_device_id";
 const RATING_OUTBOX_STORAGE_KEY = "fgf-2026-rating-outbox";
 const EVENT_YEAR = 2026;
+const ROOM_ORDER = ["Gjærhuset", "Gildesalen", "Iskjelleren"];
 const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? "http://localhost:8787"
   : "https://ginfestival-2026-api.ole-leister.workers.dev";
@@ -317,6 +318,20 @@ function visibleExhibitors() {
   }).filter(({ products }) => products.length);
 }
 
+function groupExhibitorsByRoom(exhibitors) {
+  const groups = ROOM_ORDER.map((room) => ({
+    room,
+    exhibitors: exhibitors.filter((item) => item.exhibitor.room === room),
+  })).filter((group) => group.exhibitors.length);
+  const unassigned = exhibitors.filter((item) => !ROOM_ORDER.includes(item.exhibitor.room));
+  if (unassigned.length) groups.push({ room: "Mer fra festivalen", exhibitors: unassigned });
+  return groups;
+}
+
+function roomHeadingId(room) {
+  return `room-${normalize(room).replace(/\s+/g, "-")}`;
+}
+
 function render() {
   const visible = visibleExhibitors();
   const productTotal = visible.reduce((sum, item) => sum + item.products.length, 0);
@@ -327,7 +342,14 @@ function render() {
     const favoritesEmpty = state.filter === "favorites" && state.favorites.size === 0;
     app.innerHTML = `<div class="status"><h2>${favoritesEmpty ? "Ingen favoritter ennå" : "Ingen treff"}</h2><p>${favoritesEmpty ? "Trykk på hjertet ved et produkt for å lagre det her." : "Prøv et annet søk eller filter."}</p></div>`;
   } else {
-    app.innerHTML = visible.map(({ exhibitor, products }) => exhibitorCard(exhibitor, products)).join("");
+    app.innerHTML = groupExhibitorsByRoom(visible).map(({ room, exhibitors }) => `
+      <section class="room-group" aria-labelledby="${roomHeadingId(room)}">
+        <header class="room-group__header">
+          <p>Finn utstillerne i</p>
+          <h2 id="${roomHeadingId(room)}">${escapeHtml(room)}</h2>
+        </header>
+        <div class="room-group__exhibitors">${exhibitors.map(({ exhibitor, products }) => exhibitorCard(exhibitor, products)).join("")}</div>
+      </section>`).join("");
   }
   app.setAttribute("aria-busy", "false");
 }

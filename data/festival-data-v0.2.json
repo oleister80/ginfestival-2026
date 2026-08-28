@@ -87,6 +87,7 @@
     {
       "id": "meir-distillery-as",
       "name": "MEIR Distillery",
+      "room": "Gjærhuset",
       "websiteUrl": "https://rebelgroup.no/produsent/meir/",
       "type": "gin",
       "products": [
@@ -125,6 +126,7 @@
     {
       "id": "oslo-handverksdestilleri-as",
       "name": "Oslo Håndverksdestilleri",
+      "room": "Gildesalen",
       "websiteUrl": "https://www.oslohd.no/",
       "type": "gin",
       "products": [
@@ -203,6 +205,7 @@
     {
       "id": "brennevinsgrova-as",
       "name": "Brennevinsgrova",
+      "room": "Gjærhuset",
       "websiteUrl": "https://www.brennevinsgrova.no/",
       "type": "gin",
       "products": [
@@ -341,6 +344,7 @@
     {
       "id": "anora",
       "name": "Anora",
+      "room": "Gjærhuset",
       "websiteUrl": "https://www.anoranorway.no/",
       "type": "gin",
       "products": [
@@ -489,6 +493,7 @@
     {
       "id": "bricks-beverages-as",
       "name": "Bricks Beverages",
+      "room": "Gjærhuset",
       "websiteUrl": "https://bricks.no/",
       "type": "gin-and-cocktail",
       "products": [
@@ -546,6 +551,7 @@
     {
       "id": "toast-group-as-crafted-brands-as",
       "name": "Toast Group / Crafted Brands",
+      "room": "Gjærhuset",
       "websiteUrl": "https://toastgroup.no/",
       "type": "gin",
       "products": [
@@ -874,6 +880,7 @@
     {
       "id": "fever-tree",
       "name": "Fever Tree",
+      "room": "Gjærhuset",
       "websiteUrl": "https://hansasolerahandel.no/nb_no/produkter/mineralvann/fever-tree",
       "type": "mixer",
       "products": [
@@ -972,6 +979,7 @@
     {
       "id": "bottles-as",
       "name": "Bottles",
+      "room": "Iskjelleren",
       "websiteUrl": "https://www.bottles.no/",
       "type": "gin",
       "products": [
@@ -1160,6 +1168,7 @@
     {
       "id": "hiernagla-brenneri-as",
       "name": "Hiernagla Brenneri",
+      "room": "Iskjelleren",
       "websiteUrl": "https://hiernagla.no/",
       "type": "gin",
       "products": [
@@ -1218,6 +1227,7 @@
     {
       "id": "koster-spirits",
       "name": "Koster Spirits",
+      "room": "Gildesalen",
       "websiteUrl": "https://kosterspirits.com/",
       "type": "gin",
       "products": [
@@ -1246,6 +1256,7 @@
     {
       "id": "silver-distillery-as",
       "name": "Silver Distillery",
+      "room": "Gjærhuset",
       "websiteUrl": "https://silverdistillery.no/en/home/",
       "type": "gin",
       "products": [
@@ -1294,6 +1305,7 @@
     {
       "id": "n-isom-as",
       "name": "Nøisom",
+      "room": "Gjærhuset",
       "websiteUrl": "https://noisom.no/produkter/",
       "type": "mixer-and-ready-to-drink",
       "products": [
@@ -1382,6 +1394,7 @@
     {
       "id": "smogen-destilleri-ab",
       "name": "Smögen Destilleri",
+      "room": "Iskjelleren",
       "websiteUrl": "https://www.smughabranneri.se/",
       "type": "gin",
       "products": [
@@ -1420,6 +1433,7 @@
     {
       "id": "losjeveien-2-as",
       "name": "Losjeveien 2 AS",
+      "room": "Iskjelleren",
       "websiteUrl": null,
       "type": "gin",
       "products": [
@@ -1441,7 +1455,7 @@
           "retailer": "Systembolaget",
           "productNumber": "3230601",
           "productUrl": "https://www.systembolaget.se/produkt/sprit/ogin-3230601/",
-          "imageUrl": null
+          "imageUrl": "https://product-cdn.systembolaget.se/productimages/37861121/37861121_400.webp"
         },
         {
           "id": "losjeveien-2-as-an-dulaman-irish-maritime-gin",
@@ -1468,6 +1482,7 @@
     {
       "id": "bonum-as",
       "name": "Bonum",
+      "room": "Gildesalen",
       "websiteUrl": "https://www.bonumwine.no/",
       "type": "gin",
       "products": [
