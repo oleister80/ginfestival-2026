@@ -503,6 +503,7 @@ masterclassCards.forEach((card) => {
     masterclassCards.forEach((otherCard) => {
       if (otherCard !== card) otherCard.open = false;
     });
+    scrollToElement(card);
   });
 });
 
