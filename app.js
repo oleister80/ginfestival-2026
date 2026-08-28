@@ -29,6 +29,7 @@ const toTop = document.querySelector("#to-top");
 const controlsPanel = document.querySelector(".controls");
 const sendListForm = document.querySelector("#send-list-form");
 const sendListMessage = document.querySelector("#send-list-message");
+const masterclassCards = document.querySelectorAll(".masterclass-card");
 
 function loadFavorites() {
   try {
@@ -494,6 +495,15 @@ sendListForm.addEventListener("submit", (event) => {
 
   sendListMessage.textContent = "Åpner en ferdig e-post …";
   window.location.href = `mailto:${encodeURIComponent(email)}?${parameters.join("&")}`;
+});
+
+masterclassCards.forEach((card) => {
+  card.addEventListener("toggle", () => {
+    if (!card.open) return;
+    masterclassCards.forEach((otherCard) => {
+      if (otherCard !== card) otherCard.open = false;
+    });
+  });
 });
 
 async function init() {
