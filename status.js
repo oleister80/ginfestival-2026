@@ -1,4 +1,4 @@
-const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-hiernagla-room";
+const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-bricks-return";
 const EVENT_YEAR = 2026;
 const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? "http://localhost:8787"

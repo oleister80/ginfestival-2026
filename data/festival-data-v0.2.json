@@ -466,8 +466,7 @@
     {
       "id": "bricks-beverages-as",
       "name": "Bricks Beverages",
-      "visible": false,
-      "room": "Gjærhuset",
+      "room": "Iskjelleren",
       "websiteUrl": "https://bricks.no/",
       "type": "gin-and-cocktail",
       "products": [

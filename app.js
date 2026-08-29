@@ -1,4 +1,4 @@
-const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-hiernagla-room";
+const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-bricks-return";
 const STORAGE_KEY = "fgf-2026-favorites";
 const TASTING_STORAGE_KEY = "fgf-2026-tastings";
 const DEVICE_ID_STORAGE_KEY = "ginfestival_device_id";
