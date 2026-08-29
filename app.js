@@ -1,4 +1,4 @@
-const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-brennevinsgrova";
+const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-bottles-room";
 const STORAGE_KEY = "fgf-2026-favorites";
 const TASTING_STORAGE_KEY = "fgf-2026-tastings";
 const DEVICE_ID_STORAGE_KEY = "ginfestival_device_id";
