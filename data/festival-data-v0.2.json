@@ -206,6 +206,7 @@
     {
       "id": "brennevinsgrova-as",
       "name": "Brennevinsgrova",
+      "visible": false,
       "room": "Gjærhuset",
       "websiteUrl": "https://www.brennevinsgrova.no/",
       "type": "gin",
