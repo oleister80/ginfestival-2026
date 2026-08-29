@@ -20,6 +20,7 @@
     {
       "id": "alt-om-gin",
       "name": "Alt om Gin",
+      "visible": false,
       "websiteUrl": "https://altomgin.no/",
       "type": "content",
       "products": [
@@ -344,6 +345,7 @@
     {
       "id": "anora",
       "name": "Anora",
+      "visible": false,
       "room": "Gjærhuset",
       "websiteUrl": "https://www.anoranorway.no/",
       "type": "gin",
@@ -493,6 +495,7 @@
     {
       "id": "bricks-beverages-as",
       "name": "Bricks Beverages",
+      "visible": false,
       "room": "Gjærhuset",
       "websiteUrl": "https://bricks.no/",
       "type": "gin-and-cocktail",
@@ -1442,10 +1445,10 @@
           "favoriteId": "highland-gin-skog",
           "name": "Highland Gin - SKOG",
           "category": "gin",
-          "retailer": null,
-          "productNumber": null,
-          "productUrl": null,
-          "imageUrl": null
+          "retailer": "Vinmonopolet",
+          "productNumber": "20182202",
+          "productUrl": "https://www.vinmonopolet.no/Land/Norge/Agder/Valle/Highland-Gin-Skog/p/20182202",
+          "imageUrl": "./images/highland-gin.jpg"
         },
         {
           "id": "losjeveien-2-as-systembolaget-3230601",
@@ -1464,18 +1467,20 @@
           "category": "gin",
           "retailer": null,
           "productNumber": null,
-          "productUrl": null,
-          "imageUrl": null
+          "productUrl": "https://andulamangin.com/",
+          "productLinkLabel": "Besøk produsentens nettsted",
+          "imageUrl": "./images/An-Dulaman-Irish-Maritime-Gin.jpg"
         },
         {
           "id": "losjeveien-2-as-an-dulaman-santa-ana-gin",
           "favoriteId": "an-dulaman-santa-ana-gin",
-          "name": "An Dulaman Santa Ana Gin",
+          "name": "An Dúlamán Santa Ana Gin",
           "category": "gin",
           "retailer": null,
           "productNumber": null,
-          "productUrl": null,
-          "imageUrl": null
+          "productUrl": "https://andulamangin.com/",
+          "productLinkLabel": "Besøk produsentens nettsted",
+          "imageUrl": "./images/An-Dulaman-Santa-Ana-Gin.jpg"
         }
       ]
     },

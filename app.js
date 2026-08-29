@@ -250,8 +250,11 @@ function productCard(product) {
   const isTasted = Boolean(tasting?.tasted);
   const rating = Number(tasting?.rating) || 0;
   const name = escapeHtml(product.name || "Uten navn");
+  const productLinkLabel = product.productLinkLabel
+    ? escapeHtml(product.productLinkLabel)
+    : (product.retailer ? `Se produktet hos ${escapeHtml(product.retailer)}` : "Se produktet");
   const productLink = product.productUrl
-    ? `<a class="product__link" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${product.retailer ? `Se produktet hos ${escapeHtml(product.retailer)}` : "Se produktet"} <span aria-hidden="true">↗</span></a>`
+    ? `<a class="product__link" href="${escapeAttribute(product.productUrl)}" target="_blank" rel="noopener noreferrer">${productLinkLabel} <span aria-hidden="true">↗</span></a>`
     : "";
   const image = product.imageUrl
     ? `<img class="product__image" src="${escapeAttribute(product.imageUrl)}" alt="" loading="lazy" decoding="async" onerror="this.hidden=true">`
@@ -293,7 +296,7 @@ function exhibitorCard(exhibitor, products) {
     <section id="exhibitor-${escapeAttribute(exhibitor.id)}" class="exhibitor${isOpen ? " is-open" : ""}">
       <header class="exhibitor__header">
         <div class="exhibitor__info">
-          <span class="exhibitor__kicker">${products.length} ${itemWord}</span>
+          <span class="exhibitor__kicker">${products.length} ${itemWord} i guiden</span>
           <button class="exhibitor__title" type="button" data-exhibitor-id="${escapeAttribute(exhibitor.id)}" aria-expanded="${isOpen}" aria-controls="${panelId}">${displayExhibitorName(exhibitor.name)}</button>
           ${website}
         </div>
@@ -345,7 +348,7 @@ function render() {
     app.innerHTML = groupExhibitorsByRoom(visible).map(({ room, exhibitors }) => `
       <section class="room-group" aria-labelledby="${roomHeadingId(room)}">
         <header class="room-group__header">
-          <p>Finn utstillerne i</p>
+          <p><svg class="room-group__icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg> Utstillerlokale</p>
           <h2 id="${roomHeadingId(room)}">${escapeHtml(room)}</h2>
         </header>
         <div class="room-group__exhibitors">${exhibitors.map(({ exhibitor, products }) => exhibitorCard(exhibitor, products)).join("")}</div>
