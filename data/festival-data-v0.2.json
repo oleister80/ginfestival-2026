@@ -7,11 +7,11 @@
   },
   "stats": {
     "exhibitorCount": 18,
-    "productCount": 145,
+    "productCount": 142,
     "productCountByCategory": {
       "cocktail": 1,
       "content": 1,
-      "gin": 126,
+      "gin": 123,
       "mixer": 14,
       "ready-to-drink": 3
     }
@@ -241,16 +241,6 @@
           "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/15410304-1.jpg"
         },
         {
-          "id": "brennevinsgrova-as-vinmonopolet-16983504",
-          "favoriteId": "vinmonopolet-16983504",
-          "name": "Green Apple Gin",
-          "category": "gin",
-          "retailer": "Vinmonopolet",
-          "productNumber": "16983504",
-          "productUrl": "https://www.vinmonopolet.no/p/16983504",
-          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16983504-1.jpg"
-        },
-        {
           "id": "brennevinsgrova-as-vinmonopolet-19656302",
           "favoriteId": "vinmonopolet-19656302",
           "name": "Green Apple Gin",
@@ -291,16 +281,6 @@
           "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/13756002-1.jpg"
         },
         {
-          "id": "brennevinsgrova-as-vinmonopolet-16818704",
-          "favoriteId": "vinmonopolet-16818704",
-          "name": "Premium Gin",
-          "category": "gin",
-          "retailer": "Vinmonopolet",
-          "productNumber": "16818704",
-          "productUrl": "https://www.vinmonopolet.no/p/16818704",
-          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/16818704-1.jpg"
-        },
-        {
           "id": "brennevinsgrova-as-vinmonopolet-15367802",
           "favoriteId": "vinmonopolet-15367802",
           "name": "Rosenlund Hamn Gin",
@@ -319,16 +299,6 @@
           "productNumber": "11931902",
           "productUrl": "https://www.vinmonopolet.no/p/11931902",
           "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/11931902-1.jpg"
-        },
-        {
-          "id": "brennevinsgrova-as-vinmonopolet-19656204",
-          "favoriteId": "vinmonopolet-19656204",
-          "name": "Strawberry Pink Gin",
-          "category": "gin",
-          "retailer": "Vinmonopolet",
-          "productNumber": "19656204",
-          "productUrl": "https://www.vinmonopolet.no/p/19656204",
-          "imageUrl": "https://bilder.vinmonopolet.no/cache/600x600-0/19656204-1.jpg"
         },
         {
           "id": "brennevinsgrova-as-vinmonopolet-20498102",
