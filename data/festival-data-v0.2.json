@@ -7,11 +7,11 @@
   },
   "stats": {
     "exhibitorCount": 18,
-    "productCount": 142,
+    "productCount": 143,
     "productCountByCategory": {
       "cocktail": 1,
       "content": 1,
-      "gin": 123,
+      "gin": 124,
       "mixer": 14,
       "ready-to-drink": 3
     }
@@ -1223,6 +1223,17 @@
           "productNumber": null,
           "productUrl": "https://www.systembolaget.se/produkt/sprit/koster-spirits-3151901/",
           "imageUrl": "https://www.systembolaget.se/_next/image/?url=https%3A%2F%2Fproduct-cdn.systembolaget.se%2Fproductimages%2F44484397%2F44484397_400.webp&w=256&q=75"
+        },
+        {
+          "id": "koster-spirits-golden-oyster-cask-aged",
+          "favoriteId": "golden-oyster-cask-aged",
+          "name": "Golden Oyster Cask Aged",
+          "category": "gin",
+          "retailer": null,
+          "productNumber": null,
+          "productUrl": "https://kosterspirits.com/sortiment",
+          "productLinkLabel": "Besøk produsentens nettsted",
+          "imageUrl": "./images/koster-golden-oyster.jpg"
         }
       ]
     },
