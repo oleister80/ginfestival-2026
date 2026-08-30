@@ -65,7 +65,7 @@ function renderStatistics(gins, productIndex) {
 
   const numberFormat = new Intl.NumberFormat("nb-NO", {
     minimumFractionDigits: 1,
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 1,
   });
 
   const sorted = [...gins].sort((a, b) => {
