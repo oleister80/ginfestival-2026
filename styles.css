@@ -233,12 +233,17 @@ footer a { color: var(--gold); font-size: .78rem; }
 .stats-devices span { color: var(--muted); font-size: .78rem; }
 .stats-filters { display: flex; gap: 8px; margin-bottom: 22px; overflow-x: auto; scrollbar-width: none; }
 .stats-filters::-webkit-scrollbar { display: none; }
+.stats-note { margin: -2px 0 18px; color: var(--muted); font-size: .75rem; line-height: 1.5; }
+.stats-sort { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -10px 0 22px; }
+.stats-sort > span { width: 100%; color: var(--muted); font-size: .74rem; font-weight: 700; }
 .stats-summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .stats-summary h2 { margin: 0; font: 700 1.4rem/1.2 "Playfair Display", Georgia, serif; }
 .stats-summary p { margin: 0; color: var(--muted); font-size: .72rem; }
 .stats-list { display: grid; gap: 10px; }
-.stats-card { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 12px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fffdf8; box-shadow: 0 8px 25px rgb(41 31 24 / 6%); }
-.stats-card__rank { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: #efe5d2; color: var(--brick); font-weight: 800; }
+.stats-exhibitor { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fffdf8; box-shadow: 0 8px 25px rgb(41 31 24 / 6%); }
+.stats-exhibitor > h3 { margin: 0 0 11px; color: var(--brick); font: 700 1.2rem/1.2 "Playfair Display", Georgia, serif; }
+.stats-exhibitor__products { display: grid; gap: 8px; }
+.stats-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .stats-card__info h3 { margin: 0; font: 700 1rem/1.25 "Playfair Display", Georgia, serif; }
 .stats-card__info p { margin: 4px 0 0; color: var(--muted); font-size: .7rem; }
 .stats-card__score { grid-column: 2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
@@ -247,7 +252,7 @@ footer a { color: var(--gold); font-size: .78rem; }
 
 @media (min-width: 620px) {
   .stats-main { padding-top: 55px; }
-  .stats-card { grid-template-columns: 42px minmax(0, 1fr) auto; padding: 18px 20px; }
+  .stats-card { padding: 14px 16px; }
   .stats-card__score { grid-column: auto; display: grid; justify-items: end; gap: 3px; }
 }
 

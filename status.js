@@ -1,4 +1,4 @@
-const DATA_URL = "./data/festival-data-v0.2.json?v=20260829-golden-oyster";
+const DATA_URL = "./data/festival-data-v0.2.json?v=20260830-festival-statistics";
 const EVENT_YEAR = 2026;
 const API_BASE_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
   ? "http://localhost:8787"
@@ -10,6 +10,8 @@ const statsDevices = document.querySelector("#stats-devices");
 const statsFilters = [...document.querySelectorAll("[data-stats-filter]")];
 let statisticsByProduct = [];
 let productsById = new Map();
+let activeFilter = "all";
+let activeSort = "average";
 
 function statisticsCategory(category) {
   if (["gin", "cocktail"].includes(category)) return "gin";
@@ -66,23 +68,38 @@ function renderStatistics(gins, productIndex) {
     maximumFractionDigits: 2,
   });
 
-  statsList.innerHTML = gins.map((gin, index) => {
+  const sorted = [...gins].sort((a, b) => {
+    if (activeSort === "count") return b.ratingCount - a.ratingCount || b.averageRating - a.averageRating;
+    if (activeSort === "name") return a.name.localeCompare(b.name, "nb-NO");
+    return b.averageRating - a.averageRating || b.ratingCount - a.ratingCount || a.name.localeCompare(b.name, "nb-NO");
+  });
+  const groups = new Map();
+  sorted.forEach((gin) => {
+    const exhibitors = gin.exhibitors.length ? gin.exhibitors : ["Ukjent utstiller"];
+    exhibitors.forEach((exhibitor) => {
+      if (!groups.has(exhibitor)) groups.set(exhibitor, []);
+      groups.get(exhibitor).push(gin);
+    });
+  });
+  statsList.innerHTML = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b, "nb-NO")).map(([exhibitor, products]) => `
+    <section class="stats-exhibitor">
+      <h3>${escapeHtml(exhibitor)}</h3>
+      <div class="stats-exhibitor__products">${products.map((gin) => {
     const product = productIndex.get(gin.ginId);
     const name = product?.name || gin.ginId;
-    const exhibitors = product?.exhibitors.join(" · ") || "Ukjent produkt-ID";
     return `
       <article class="stats-card">
-        <span class="stats-card__rank" aria-label="Plass ${index + 1}">${index + 1}</span>
         <div class="stats-card__info">
           <h3>${escapeHtml(name)}</h3>
-          <p>${escapeHtml(exhibitors)}</p>
+          <p>${voteText(gin.ratingCount)}</p>
         </div>
         <div class="stats-card__score">
           <strong>${numberFormat.format(gin.averageRating)}</strong>
-          <span>av 6 · ${voteText(gin.ratingCount)}</span>
+          <span>av 6</span>
         </div>
       </article>`;
-  }).join("");
+  }).join("")}</div>
+    </section>`).join("");
 }
 
 function setFilter(filter) {
@@ -91,10 +108,21 @@ function setFilter(filter) {
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
+  activeFilter = filter;
   const visibleStatistics = filter === "all"
     ? statisticsByProduct
     : statisticsByProduct.filter((item) => item.category === filter);
   renderStatistics(visibleStatistics, productsById);
+}
+
+function setSort(sort) {
+  activeSort = sort;
+  document.querySelectorAll("[data-stats-sort]").forEach((button) => {
+    const active = button.dataset.statsSort === sort;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  setFilter(activeFilter);
 }
 
 function renderUniqueDevices(uniqueDevices) {
@@ -124,6 +152,8 @@ async function init() {
       .map((item) => ({
         ...item,
         category: statisticsCategory(productsById.get(item.ginId)?.category),
+        name: productsById.get(item.ginId)?.name || item.ginId,
+        exhibitors: productsById.get(item.ginId)?.exhibitors || [],
       }))
       .filter((item) => item.category);
 
@@ -156,6 +186,9 @@ async function init() {
 
 statsFilters.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.statsFilter));
+});
+document.querySelectorAll("[data-stats-sort]").forEach((button) => {
+  button.addEventListener("click", () => setSort(button.dataset.statsSort));
 });
 
 init();

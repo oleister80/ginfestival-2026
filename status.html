@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#12372f">
-    <title>Status terningkast | Fredrikstad Ginfestival 2026</title>
+    <title>Festivalstatistikk | Fredrikstad Ginfestival 2026</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
-    <script src="status.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260830-festival-statistics">
+    <script src="status.js?v=20260830-festival-statistics" defer></script>
   </head>
   <body class="stats-page">
     <main class="stats-main">
       <header class="stats-header">
         <p class="eyebrow">Fredrikstad Ginfestival 2026</p>
-        <h1>Status terningkast</h1>
-        <p>Produkter med minst én registrert stemme, sortert etter høyeste gjennomsnitt.</p>
+        <h1>Festivalstatistikk</h1>
+        <p>Terningkast fra festivalguiden, gruppert etter utstiller. Siden er ikke lenket fra festivalguiden.</p>
       </header>
 
       <section aria-labelledby="stats-title">
         <div id="stats-devices" class="stats-devices" aria-live="polite"></div>
+        <p class="stats-note">Favoritter og «smakt» ble lagret lokalt på deltakernes enheter og inngår derfor ikke i denne statistikken.</p>
         <div class="stats-filters" aria-label="Filtrer produktstatistikk">
           <button class="filter is-active" type="button" data-stats-filter="all" aria-pressed="true">Alle</button>
           <button class="filter" type="button" data-stats-filter="gin" aria-pressed="false">Gin</button>
           <button class="filter" type="button" data-stats-filter="other" aria-pressed="false">Tonic / annet</button>
+        </div>
+        <div class="stats-sort" aria-label="Sorter statistikken">
+          <span>Sorter produkter:</span>
+          <button class="filter is-active" type="button" data-stats-sort="average" aria-pressed="true">Høyest snitt</button>
+          <button class="filter" type="button" data-stats-sort="count" aria-pressed="false">Flest stemmer</button>
+          <button class="filter" type="button" data-stats-sort="name" aria-pressed="false">Navn</button>
         </div>
         <div class="stats-summary">
           <h2 id="stats-title">Resultater</h2>
