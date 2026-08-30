@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#12372f">
     <title>Festivalstatistikk | Fredrikstad Ginfestival 2026</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260830-festival-statistics">
-    <script src="status.js?v=20260830-statistics-one-decimal" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260830-statistics-grouping">
+    <script src="status.js?v=20260830-statistics-grouping" defer></script>
   </head>
   <body class="stats-page">
     <main class="stats-main">
@@ -32,6 +32,10 @@
           <button class="filter" type="button" data-stats-sort="count" aria-pressed="false">Flest stemmer</button>
           <button class="filter" type="button" data-stats-sort="name" aria-pressed="false">Navn</button>
         </div>
+        <label class="stats-group-toggle" for="group-by-exhibitor">
+          <input id="group-by-exhibitor" type="checkbox" checked>
+          <span>Grupper per utstiller</span>
+        </label>
         <div class="stats-summary">
           <h2 id="stats-title">Resultater</h2>
           <p id="stats-updated" aria-live="polite"></p>

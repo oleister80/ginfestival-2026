@@ -8,10 +8,12 @@ const statsList = document.querySelector("#stats-list");
 const statsUpdated = document.querySelector("#stats-updated");
 const statsDevices = document.querySelector("#stats-devices");
 const statsFilters = [...document.querySelectorAll("[data-stats-filter]")];
+const groupByExhibitorInput = document.querySelector("#group-by-exhibitor");
 let statisticsByProduct = [];
 let productsById = new Map();
 let activeFilter = "all";
 let activeSort = "average";
+let groupByExhibitor = true;
 
 function statisticsCategory(category) {
   if (["gin", "cocktail"].includes(category)) return "gin";
@@ -57,7 +59,24 @@ function voteText(count) {
   return `basert på ${count} ${count === 1 ? "stemme" : "stemmer"}`;
 }
 
-function renderStatistics(gins, productIndex) {
+function renderStatsCard(gin, numberFormat, showExhibitor) {
+  const product = productsById.get(gin.ginId);
+  const name = product?.name || gin.ginId;
+  const exhibitorText = gin.exhibitors.length ? gin.exhibitors.join(", ") : "Ukjent utstiller";
+  return `
+    <article class="stats-card">
+      <div class="stats-card__info">
+        <h3>${escapeHtml(name)}</h3>
+        <p>${voteText(gin.ratingCount)}${showExhibitor ? `<span class="stats-card__exhibitor">Utstiller: ${escapeHtml(exhibitorText)}</span>` : ""}</p>
+      </div>
+      <div class="stats-card__score">
+        <strong>${numberFormat.format(gin.averageRating)}</strong>
+        <span>av 6</span>
+      </div>
+    </article>`;
+}
+
+function renderStatistics(gins) {
   if (!gins.length) {
     statsList.innerHTML = '<div class="status"><h2>Ingen terningkast ennå</h2><p>Resultatene vises her når den første stemmen er registrert.</p></div>';
     return;
@@ -73,6 +92,10 @@ function renderStatistics(gins, productIndex) {
     if (activeSort === "name") return a.name.localeCompare(b.name, "nb-NO");
     return b.averageRating - a.averageRating || b.ratingCount - a.ratingCount || a.name.localeCompare(b.name, "nb-NO");
   });
+  if (!groupByExhibitor) {
+    statsList.innerHTML = `<div class="stats-exhibitor stats-exhibitor--flat">${sorted.map((gin) => renderStatsCard(gin, numberFormat, true)).join("")}</div>`;
+    return;
+  }
   const groups = new Map();
   sorted.forEach((gin) => {
     const exhibitors = gin.exhibitors.length ? gin.exhibitors : ["Ukjent utstiller"];
@@ -84,21 +107,7 @@ function renderStatistics(gins, productIndex) {
   statsList.innerHTML = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b, "nb-NO")).map(([exhibitor, products]) => `
     <section class="stats-exhibitor">
       <h3>${escapeHtml(exhibitor)}</h3>
-      <div class="stats-exhibitor__products">${products.map((gin) => {
-    const product = productIndex.get(gin.ginId);
-    const name = product?.name || gin.ginId;
-    return `
-      <article class="stats-card">
-        <div class="stats-card__info">
-          <h3>${escapeHtml(name)}</h3>
-          <p>${voteText(gin.ratingCount)}</p>
-        </div>
-        <div class="stats-card__score">
-          <strong>${numberFormat.format(gin.averageRating)}</strong>
-          <span>av 6</span>
-        </div>
-      </article>`;
-  }).join("")}</div>
+      <div class="stats-exhibitor__products">${products.map((gin) => renderStatsCard(gin, numberFormat, false)).join("")}</div>
     </section>`).join("");
 }
 
@@ -112,7 +121,7 @@ function setFilter(filter) {
   const visibleStatistics = filter === "all"
     ? statisticsByProduct
     : statisticsByProduct.filter((item) => item.category === filter);
-  renderStatistics(visibleStatistics, productsById);
+  renderStatistics(visibleStatistics);
 }
 
 function setSort(sort) {
@@ -189,6 +198,10 @@ statsFilters.forEach((button) => {
 });
 document.querySelectorAll("[data-stats-sort]").forEach((button) => {
   button.addEventListener("click", () => setSort(button.dataset.statsSort));
+});
+groupByExhibitorInput.addEventListener("change", () => {
+  groupByExhibitor = groupByExhibitorInput.checked;
+  setFilter(activeFilter);
 });
 
 init();

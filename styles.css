@@ -236,6 +236,9 @@ footer a { color: var(--gold); font-size: .78rem; }
 .stats-note { margin: -2px 0 18px; color: var(--muted); font-size: .75rem; line-height: 1.5; }
 .stats-sort { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -10px 0 22px; }
 .stats-sort > span { width: 100%; color: var(--muted); font-size: .74rem; font-weight: 700; }
+.stats-group-toggle { display: inline-flex; align-items: center; gap: 8px; margin: -8px 0 22px; color: var(--ink); font-size: .8rem; font-weight: 700; cursor: pointer; }
+.stats-group-toggle input { width: 17px; height: 17px; margin: 0; accent-color: var(--night); cursor: pointer; }
+.stats-group-toggle:focus-within { outline: 3px solid rgb(239 216 92 / 50%); outline-offset: 3px; border-radius: 3px; }
 .stats-summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .stats-summary h2 { margin: 0; font: 700 1.4rem/1.2 "Playfair Display", Georgia, serif; }
 .stats-summary p { margin: 0; color: var(--muted); font-size: .72rem; }
@@ -243,9 +246,11 @@ footer a { color: var(--gold); font-size: .78rem; }
 .stats-exhibitor { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fffdf8; box-shadow: 0 8px 25px rgb(41 31 24 / 6%); }
 .stats-exhibitor > h3 { margin: 0 0 11px; color: var(--brick); font: 700 1.2rem/1.2 "Playfair Display", Georgia, serif; }
 .stats-exhibitor__products { display: grid; gap: 8px; }
+.stats-exhibitor--flat { display: grid; gap: 8px; }
 .stats-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .stats-card__info h3 { margin: 0; font: 700 1rem/1.25 "Playfair Display", Georgia, serif; }
 .stats-card__info p { margin: 4px 0 0; color: var(--muted); font-size: .7rem; }
+.stats-card__exhibitor { display: block; margin-top: 3px; color: var(--brick); font-weight: 700; }
 .stats-card__score { grid-column: 2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
 .stats-card__score strong { color: var(--brick); font: 700 1.8rem/1 Georgia, serif; }
 .stats-card__score span { color: var(--muted); font-size: .72rem; }
